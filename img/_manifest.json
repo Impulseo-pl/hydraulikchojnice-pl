@@ -1,0 +1,394 @@
+[
+ {
+  "src": "Montaz\u0307_instalacji_gazowych.jpg",
+  "idx": 0,
+  "cat": "gaz",
+  "base": "gaz-01",
+  "w": 506,
+  "h": 900
+ },
+ {
+  "src": "Montaz\u0307_instalacji_wodno_kanalizacyjnych.jpg",
+  "idx": 1,
+  "cat": "wod-kan",
+  "base": "wod-kan-01",
+  "w": 900,
+  "h": 675
+ },
+ {
+  "src": "Montaz\u0307_kot\u0142o\u0301w_gazowych_oraz_na_paliwa_sta\u0142e.jpg",
+  "idx": 2,
+  "cat": "kotlownia",
+  "base": "kotlownia-01",
+  "w": 675,
+  "h": 900
+ },
+ {
+  "src": "Montaz\u0307_ogrzewania_pod\u0142ogwego.jpg",
+  "idx": 3,
+  "cat": "podlogowka",
+  "base": "podlogowka-01",
+  "w": 900,
+  "h": 675
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.37.20.jpeg",
+  "idx": 5,
+  "cat": "kotlownia",
+  "base": "kotlownia-02",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.37.20_(1).jpeg",
+  "idx": 6,
+  "cat": "wod-kan",
+  "base": "wod-kan-02",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.37.20_(2).jpeg",
+  "idx": 7,
+  "cat": "rozdzielacz",
+  "base": "rozdzielacz-01",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.37.20_(3).jpeg",
+  "idx": 8,
+  "cat": "wod-kan",
+  "base": "wod-kan-03",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.37.21.jpeg",
+  "idx": 9,
+  "cat": "wod-kan",
+  "base": "wod-kan-04",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.37.21_(1).jpeg",
+  "idx": 10,
+  "cat": "wod-kan",
+  "base": "wod-kan-05",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.37.21_(2).jpeg",
+  "idx": 11,
+  "cat": "wod-kan",
+  "base": "wod-kan-06",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.37.21_(3).jpeg",
+  "idx": 12,
+  "cat": "kotlownia",
+  "base": "kotlownia-03",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.37.21_(4).jpeg",
+  "idx": 13,
+  "cat": "grzejnik",
+  "base": "grzejnik-01",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.37.21_(5).jpeg",
+  "idx": 14,
+  "cat": "wod-kan",
+  "base": "wod-kan-07",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.37.22.jpeg",
+  "idx": 15,
+  "cat": "rekuperacja",
+  "base": "rekuperacja-01",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.37.22_(1).jpeg",
+  "idx": 16,
+  "cat": "rekuperacja",
+  "base": "rekuperacja-02",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.37.22_(10).jpeg",
+  "idx": 17,
+  "cat": "podlogowka",
+  "base": "podlogowka-02",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.37.22_(11).jpeg",
+  "idx": 18,
+  "cat": "rozdzielacz",
+  "base": "rozdzielacz-02",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.37.22_(2).jpeg",
+  "idx": 19,
+  "cat": "sterowanie",
+  "base": "sterowanie-01",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.37.22_(3).jpeg",
+  "idx": 20,
+  "cat": "podlogowka",
+  "base": "podlogowka-03",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.37.22_(4).jpeg",
+  "idx": 21,
+  "cat": "podlogowka",
+  "base": "podlogowka-04",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.37.22_(5).jpeg",
+  "idx": 22,
+  "cat": "podlogowka",
+  "base": "podlogowka-05",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.37.22_(6).jpeg",
+  "idx": 23,
+  "cat": "podlogowka",
+  "base": "podlogowka-06",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.37.22_(7).jpeg",
+  "idx": 24,
+  "cat": "podlogowka",
+  "base": "podlogowka-07",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.37.22_(8).jpeg",
+  "idx": 25,
+  "cat": "podlogowka",
+  "base": "podlogowka-08",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.37.22_(9).jpeg",
+  "idx": 26,
+  "cat": "podlogowka",
+  "base": "podlogowka-09",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.37.23.jpeg",
+  "idx": 27,
+  "cat": "podlogowka",
+  "base": "podlogowka-10",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.37.58.jpeg",
+  "idx": 28,
+  "cat": "sterowanie",
+  "base": "sterowanie-02",
+  "w": 900,
+  "h": 675
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.37.58_(1).jpeg",
+  "idx": 29,
+  "cat": "kotlownia",
+  "base": "kotlownia-04",
+  "w": 506,
+  "h": 900
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.37.58_(2).jpeg",
+  "idx": 30,
+  "cat": "kotlownia",
+  "base": "kotlownia-05",
+  "w": 900,
+  "h": 506
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.37.58_(3).jpeg",
+  "idx": 31,
+  "cat": "kotlownia",
+  "base": "kotlownia-06",
+  "w": 675,
+  "h": 900
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.39.10.jpeg",
+  "idx": 32,
+  "cat": "podlogowka",
+  "base": "podlogowka-11",
+  "w": 675,
+  "h": 900
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.39.10_(1).jpeg",
+  "idx": 33,
+  "cat": "rozdzielacz",
+  "base": "rozdzielacz-03",
+  "w": 900,
+  "h": 675
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.39.10_(2).jpeg",
+  "idx": 34,
+  "cat": "podlogowka",
+  "base": "podlogowka-12",
+  "w": 675,
+  "h": 900
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.39.10_(3).jpeg",
+  "idx": 35,
+  "cat": "podlogowka",
+  "base": "podlogowka-13",
+  "w": 675,
+  "h": 900
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.39.12.jpeg",
+  "idx": 36,
+  "cat": "podlogowka",
+  "base": "podlogowka-14",
+  "w": 900,
+  "h": 675
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.39.12_(1).jpeg",
+  "idx": 37,
+  "cat": "podlogowka",
+  "base": "podlogowka-15",
+  "w": 900,
+  "h": 675
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.39.12_(10).jpeg",
+  "idx": 38,
+  "cat": "podlogowka",
+  "base": "podlogowka-16",
+  "w": 900,
+  "h": 675
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.39.12_(2).jpeg",
+  "idx": 39,
+  "cat": "podlogowka",
+  "base": "podlogowka-17",
+  "w": 900,
+  "h": 675
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.39.12_(3).jpeg",
+  "idx": 40,
+  "cat": "podlogowka",
+  "base": "podlogowka-18",
+  "w": 900,
+  "h": 675
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.39.12_(4).jpeg",
+  "idx": 41,
+  "cat": "podlogowka",
+  "base": "podlogowka-19",
+  "w": 900,
+  "h": 675
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.39.12_(5).jpeg",
+  "idx": 42,
+  "cat": "podlogowka",
+  "base": "podlogowka-20",
+  "w": 900,
+  "h": 675
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.39.12_(6).jpeg",
+  "idx": 43,
+  "cat": "podlogowka",
+  "base": "podlogowka-21",
+  "w": 900,
+  "h": 675
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.39.12_(7).jpeg",
+  "idx": 44,
+  "cat": "podlogowka",
+  "base": "podlogowka-22",
+  "w": 900,
+  "h": 675
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.39.12_(8).jpeg",
+  "idx": 45,
+  "cat": "podlogowka",
+  "base": "podlogowka-23",
+  "w": 900,
+  "h": 675
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.39.12_(9).jpeg",
+  "idx": 46,
+  "cat": "podlogowka",
+  "base": "podlogowka-24",
+  "w": 900,
+  "h": 675
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.39.31.jpeg",
+  "idx": 47,
+  "cat": "zasobnik",
+  "base": "zasobnik-01",
+  "w": 675,
+  "h": 900
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.39.31_(1).jpeg",
+  "idx": 48,
+  "cat": "zasobnik",
+  "base": "zasobnik-02",
+  "w": 675,
+  "h": 900
+ },
+ {
+  "src": "WhatsApp_Image_2026-07-28_at_21.39.31_(2).jpeg",
+  "idx": 49,
+  "cat": "zasobnik",
+  "base": "zasobnik-03",
+  "w": 675,
+  "h": 900
+ }
+]
