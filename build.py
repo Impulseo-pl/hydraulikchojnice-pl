@@ -50,7 +50,7 @@ def head(p):
   <link rel="manifest" href="site.webmanifest">
   <link rel="preload" href="assets/fonts/barlow-600-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/app.css?v=27">
+  <link rel="stylesheet" href="assets/app.css?v=32">
 {schema}</head>
 <body{' class="hero-page"' if p.get('hero') else ''}>
 <a class="skip" href="#main">Przejdź do treści</a>
@@ -135,7 +135,7 @@ def foot(p):
   <p class="lb-cap"></p>
 </div>
 
-<script src="assets/app.js?v=5"></script>
+<script src="assets/app.js?v=6"></script>
 </body>
 </html>
 """

@@ -32,7 +32,7 @@ KAFELKI = [
 
 PROCES = [
     ("01", "Telefon", "Opisujesz zakres prac u siebie, a my wspólnie ustalamy termin spotkania na miejscu."),
-    ("02", "Wycena", "Cena ustalona na podstawie wyceny jest ceną ostateczną, bez ukrytych kosztów."),
+    ("02", "Wycena", "Cena ustalona na podstawie wyceny jest ceną ostateczną. Nie dochodzą do niej żadne dopłaty."),
     ("03", "Wykonanie", "Wykonujemy instalacje według wcześniejszych ustaleń, uruchamiamy, konfigurujemy, regulujemy, "
                         "tłumaczymy zasadę działania oraz uczymy użytkowania instalacji."),
     ("04", "Odbiór i gwarancja", "Na wykonaną instalację dostajesz gwarancję, protokoły z prób szczelności "
@@ -392,7 +392,7 @@ def index_body():
     <div class="area">
       <div class="rv">
         <p class="kicker">Obszar działania</p>
-        <h2>Dojeżdżamy do was</h2>
+        <h2>Dojeżdżamy do ciebie</h2>
         <p class="lead">Pracujemy w Chojnicach i okolicy, przy większych zleceniach dojeżdżamy do 100 km.
           Nie wiesz, czy dojedziemy do ciebie? Wystarczy jeden telefon.</p>
         <div class="towns">
@@ -408,9 +408,14 @@ def index_body():
     </div>
 
     <figure class="mapa rv">
-      <iframe title="Mapa: Chojnice i okolice" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-        src="https://maps.google.com/maps?q=Chojnice&amp;z=9&amp;output=embed&amp;hl=pl"
-        style="border:0" allowfullscreen></iframe>
+      <div class="mapa-zaslona" data-mapa
+           data-mapa-src="https://maps.google.com/maps?q=Chojnice&amp;z=9&amp;output=embed&amp;hl=pl"
+           data-mapa-tytul="Mapa: Chojnice i okolice">
+        <span class="mapa-pin" aria-hidden="true"></span>
+        <strong>Chojnice i okolica</strong>
+        <button type="button" class="mapa-btn">Pokaż mapę Google</button>
+        <span class="mapa-nota">Mapa łączy się z Google dopiero po kliknięciu.</span>
+      </div>
       <figcaption>Chojnice i okolica. Przy większych zleceniach dojeżdżamy w promieniu 100 km.</figcaption>
     </figure>
   </div>
@@ -477,7 +482,7 @@ def oferta_body():
                      ("podlogowka-08", ""), ("zasobnik-03", ""), ("wod-kan-02", "b-wide")])
 
     return f"""{strona_head("Oferta", "Od fundamentów po efekt finalny inwestycji",
-                            "Zakres usług, które wykonujemy, znajdziecie poniżej. Wycena zakresu jest bezpłatna, "
+                            "Zakres usług, które wykonujemy, znajdziesz poniżej. Wycena zakresu jest bezpłatna, "
                             "a cena ustalona po obejrzeniu miejsca jest ceną ostateczną.", "wod-kan-05")}
 
 <section class="sec" style="padding-top:0">

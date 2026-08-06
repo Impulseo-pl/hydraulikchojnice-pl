@@ -111,7 +111,9 @@ p{margin:0}
 
 /* strona z pełnoekranowym hero: nagłówek leży na zdjęciu, po przewinięciu wraca jasny pasek */
 body.hero-page .top{position:fixed;left:0;right:0;top:0;transition:transform .35s cubic-bezier(.2,.7,.3,1),background .3s;background:transparent;backdrop-filter:none;border-bottom-color:transparent}
-body.hero-page .top .nav a{color:rgba(255,255,255,.88)}
+/* menu leży na zdjęciu hero: samo przyciemnienie .hero::after daje tylko 3,2:1,
+   a przy jaśniejszym kadrze jeszcze mniej. Pełna biel + cień jak w nagłówku hero. */
+body.hero-page .top .nav a{color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.55),0 1px 12px rgba(0,0,0,.4)}
 body.hero-page .top .nav a:hover{color:#fff}
 body.hero-page .top .tel-btn{color:#fff!important}
 body.hero-page .top .burger{border-color:rgba(255,255,255,.45)}
@@ -164,7 +166,7 @@ body.hero-page .top.is-stuck .brand .logo-dark{display:block}
 .btn-3:hover{border-color:var(--ink);transform:translateY(-2px)}
 .btn .num{font-family:var(--m);font-size:15px}
 .hero-cap{position:relative;z-index:2;margin-top:26px;padding-top:16px;border-top:1px solid rgba(255,255,255,.22);
-  font-family:var(--m);font-size:12.5px;letter-spacing:.05em;color:rgba(255,255,255,.72);min-height:2.4em}
+  font-family:var(--m);font-size:12.5px;letter-spacing:.05em;color:rgba(255,255,255,.95);min-height:2.4em}
 
 /* ——— pasek haseł pod hero ——— */
 .strip{background:var(--navy);color:#fff}
@@ -206,7 +208,8 @@ h3{font-size:clamp(21px,2.2vw,26px);letter-spacing:-.005em}
   display:flex;flex-direction:column;justify-content:flex-end;
   background:linear-gradient(180deg,rgba(9,20,31,0),rgba(9,20,31,.86));font-family:var(--h);font-weight:600;font-size:17px;line-height:1.24;letter-spacing:-.015em}
 .tile .cap>span.txt{display:block;min-height:2.48em}
-.tile .idx{font-family:var(--m);font-size:11.5px;letter-spacing:.14em;color:rgba(255,255,255,.7);display:block;margin-bottom:7px;font-weight:500}
+.tile .idx{font-family:var(--m);font-size:11.5px;letter-spacing:.14em;color:rgba(255,255,255,.88);display:block;margin-bottom:7px;font-weight:500;
+  text-shadow:0 1px 2px rgba(0,0,0,.5)}
 @media (max-width:1000px){.tiles{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){.tiles{grid-template-columns:1fr;gap:14px}.tile{aspect-ratio:4/3}}
 
@@ -343,6 +346,19 @@ h3{font-size:clamp(21px,2.2vw,26px);letter-spacing:-.005em}
 .mapa{margin:clamp(34px,4.5vw,56px) 0 0;padding:0}
 .mapa img{width:100%;height:auto;border-radius:var(--r);border:1px solid var(--line);background:#f4f1ec}
 .mapa iframe{width:100%;height:clamp(320px,46vw,520px);border-radius:var(--r);border:1px solid var(--line);display:block}
+/* Mapa ładuje się dopiero po kliknięciu (decyzja K. 07.08.2026): dopóki klient nie
+   kliknie, strona nie łączy się z Google — więc baner cookies jest niepotrzebny,
+   a mapa i tak jest prawdziwa. Zasłona ma wyglądać jak część strony, nie jak błąd. */
+.mapa-zaslona{width:100%;height:clamp(320px,46vw,520px);border-radius:var(--r);border:1px solid var(--line);
+  background:linear-gradient(160deg,var(--paper-2),#e7e2d9);display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:14px;text-align:center;padding:28px}
+.mapa-zaslona strong{font-family:var(--h);font-size:clamp(20px,2.4vw,26px);font-weight:600;color:var(--ink)}
+.mapa-pin{width:16px;height:16px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);
+  background:var(--accent);box-shadow:0 6px 16px -8px rgba(142,36,52,.9)}
+.mapa-btn{font-family:var(--b);font-size:15.5px;color:#fff;background:var(--accent);border:0;
+  border-radius:var(--r);padding:13px 22px;cursor:pointer;transition:background .2s,transform .2s}
+.mapa-btn:hover{background:var(--accent-dark);transform:translateY(-1px)}
+.mapa-nota{font-size:13.5px;color:var(--ink-2);max-width:34ch}
 .mapa figcaption{margin-top:14px;font-size:14.5px;color:var(--ink-3);max-width:70ch}
 
 /* ——— faq ——— */

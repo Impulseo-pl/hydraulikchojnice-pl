@@ -155,6 +155,25 @@
     });
   }
 
+  /* mapa: łączymy się z Google dopiero po kliknięciu klienta.
+     Dzięki temu strona nie wysyła nic do Google przy samym wejściu i nie
+     potrzebuje banera zgody, a mapa i tak jest prawdziwa i klikalna. */
+  var mapa = document.querySelector('[data-mapa]');
+  if (mapa) {
+    var przycisk = mapa.querySelector('.mapa-btn');
+    var pokaz = function () {
+      var ramka = document.createElement('iframe');
+      ramka.src = mapa.getAttribute('data-mapa-src');
+      ramka.title = mapa.getAttribute('data-mapa-tytul') || 'Mapa';
+      ramka.loading = 'lazy';
+      ramka.referrerPolicy = 'no-referrer-when-downgrade';
+      ramka.allowFullscreen = true;
+      ramka.style.border = '0';
+      mapa.parentNode.replaceChild(ramka, mapa);
+    };
+    if (przycisk) przycisk.addEventListener('click', pokaz);
+  }
+
   /* rok w stopce */
   var y = document.querySelector('[data-year]');
   if (y) y.textContent = new Date().getFullYear();

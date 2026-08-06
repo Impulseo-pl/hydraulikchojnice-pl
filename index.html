@@ -23,7 +23,7 @@
   <link rel="manifest" href="site.webmanifest">
   <link rel="preload" href="assets/fonts/barlow-600-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/app.css?v=27">
+  <link rel="stylesheet" href="assets/app.css?v=32">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -146,7 +146,7 @@
     </div>
     <div class="steps rv">
       <div class="step"><span class="n">01</span><h3>Telefon</h3><p>Opisujesz zakres prac u siebie, a my wspólnie ustalamy termin spotkania na miejscu.</p></div>
-      <div class="step"><span class="n">02</span><h3>Wycena</h3><p>Cena ustalona na podstawie wyceny jest ceną ostateczną, bez ukrytych kosztów.</p></div>
+      <div class="step"><span class="n">02</span><h3>Wycena</h3><p>Cena ustalona na podstawie wyceny jest ceną ostateczną. Nie dochodzą do niej żadne dopłaty.</p></div>
       <div class="step"><span class="n">03</span><h3>Wykonanie</h3><p>Wykonujemy instalacje według wcześniejszych ustaleń, uruchamiamy, konfigurujemy, regulujemy, tłumaczymy zasadę działania oraz uczymy użytkowania instalacji.</p></div>
       <div class="step"><span class="n">04</span><h3>Odbiór i gwarancja</h3><p>Na wykonaną instalację dostajesz gwarancję, protokoły z prób szczelności oraz stały kontakt z nami w razie problemów.</p></div>
     </div>
@@ -239,7 +239,7 @@
     <div class="area">
       <div class="rv">
         <p class="kicker">Obszar działania</p>
-        <h2>Dojeżdżamy do was</h2>
+        <h2>Dojeżdżamy do ciebie</h2>
         <p class="lead">Pracujemy w Chojnicach i okolicy, przy większych zleceniach dojeżdżamy do 100 km.
           Nie wiesz, czy dojedziemy do ciebie? Wystarczy jeden telefon.</p>
         <div class="towns">
@@ -259,9 +259,14 @@
     </div>
 
     <figure class="mapa rv">
-      <iframe title="Mapa: Chojnice i okolice" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-        src="https://maps.google.com/maps?q=Chojnice&amp;z=9&amp;output=embed&amp;hl=pl"
-        style="border:0" allowfullscreen></iframe>
+      <div class="mapa-zaslona" data-mapa
+           data-mapa-src="https://maps.google.com/maps?q=Chojnice&amp;z=9&amp;output=embed&amp;hl=pl"
+           data-mapa-tytul="Mapa: Chojnice i okolice">
+        <span class="mapa-pin" aria-hidden="true"></span>
+        <strong>Chojnice i okolica</strong>
+        <button type="button" class="mapa-btn">Pokaż mapę Google</button>
+        <span class="mapa-nota">Mapa łączy się z Google dopiero po kliknięciu.</span>
+      </div>
       <figcaption>Chojnice i okolica. Przy większych zleceniach dojeżdżamy w promieniu 100 km.</figcaption>
     </figure>
   </div>
@@ -347,6 +352,6 @@
   <p class="lb-cap"></p>
 </div>
 
-<script src="assets/app.js?v=5"></script>
+<script src="assets/app.js?v=6"></script>
 </body>
 </html>
