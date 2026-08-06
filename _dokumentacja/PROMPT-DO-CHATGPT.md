@@ -1,4 +1,4 @@
-# PROMPT DO WKLEJENIA W CHATGPT
+ jak# PROMPT DO WKLEJENIA W CHATGPT
 
 Skopiuj wszystko poniżej linii i wklej do ChatGPT. Odpowiedź, którą dostaniesz, wklej z powrotem
 Claude'owi — on naniesie poprawki na stronę.
