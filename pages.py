@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Treść poszczególnych stron serwisu."""
-from photos import img, img_special, zoom_fig, gallery_groups, opis
+from photos import img, img_special, img_pas, zoom_fig, gallery_groups, opis
 
 TEL = "+48 883 602 422"
 TEL_E164 = "+48883602422"
@@ -143,8 +143,7 @@ def strona_head(kicker, h1, lead, base):
     """Nagłówek podstrony, opcjonalnie z pasem zdjęciowym pod spodem."""
     pas = ""
     if base:
-        tag = img_special(base, lazy=False, sizes="100vw") if base in ("bus",) \
-            else img(base, lazy=False, sizes="100vw")
+        tag = img_pas(base)
         tag = tag.replace('<img', '<img style="width:100%;height:100%;object-fit:cover"', 1)
         pas = f"""<div class="wrap-wide rv" style="margin-bottom:clamp(20px,4vw,40px)">
   <figure style="margin:0;overflow:hidden;border-radius:4px;aspect-ratio:21/8;background:#dedad3">
@@ -501,8 +500,8 @@ def realizacje_body():
 
 def partner_body():
     URZADZENIA = [
-        (1, "kotły gazowe Vaillant"), (2, "pompa ciepła Vaillant"), (3, "kocioł kondensacyjny Vaillant"),
-        (4, "kocioł wiszący Vaillant"), (5, "zasobnik i kocioł Vaillant"),
+        (1, "kotły stojące z zasobnikiem Vaillant"), (2, "pompa ciepła Vaillant"),
+        (4, "kocioł wiszący Vaillant"), (5, "kocioł kondensacyjny Vaillant"),
     ]
     urzadzenia = "\n".join(
         f'      <figure data-zoom="img/vaillant-{i:02d}-1600.webp" data-alt="Urządzenie Vaillant, {t}" '
@@ -530,7 +529,7 @@ def partner_body():
 
     return f"""{strona_head("Partner", "Autoryzowany montaż i serwis Vaillant",
                             "Pracujemy na urządzeniach Vaillant i mamy autoryzację producenta na ich montaż oraz serwis. "
-                            "Dzięki temu sprzęt, gwarancja i przeglądy zostają w jednych rękach.", "kotlownia-06")}
+                            "Dzięki temu sprzęt, gwarancja i przeglądy zostają w jednych rękach.", "vaillant-03")}
 
 <section class="sec" style="padding-top:0">
   <div class="wrap">

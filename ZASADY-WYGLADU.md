@@ -96,6 +96,33 @@ linię wyrównania; jeśli coś wygląda na przesunięte mimo równych liczb, wi
 
 ---
 
+## 5. Rozdzielczość zdjęć: ekrany 2× i kiedy upscalować
+
+**Najczęstsza przyczyna „zdjęcie wygląda miękko" to nie kadrowanie, tylko gęstość ekranu.**
+MacBooki i telefony mają gęstość 2×: pas o szerokości 1440 punktów potrzebuje pliku **2880 px**,
+inaczej przeglądarka rozciąga go dwukrotnie. Sprawdzenie w konsoli:
+
+```js
+const i = document.querySelector('.wrap-wide img');
+i.naturalWidth / i.getBoundingClientRect().width   // ma być ≥ 1,7
+```
+⚠️ Wynik zafałszuje **zoom strony** (Cmd +/−). Przy zoomie 71% przeglądarka poda liczby zaniżone
+o ten sam współczynnik — najpierw `Cmd+0`, potem mierz.
+
+**Upscale AI (Upscayl, lokalnie i za darmo) — stosujemy wybiórczo:**
+
+| Rodzaj zdjęcia | Upscale | Dlaczego |
+|---|---|---|
+| napisy, logo, oklejone auto, certyfikaty | ✅ TAK | czyste krawędzie liter, bez aureoli |
+| zdjęcia produktowe, gładkie powierzchnie | ✅ TAK | mało faktury do zgubienia |
+| cegła, tynk, beton, drewno, rdza | ⛔ NIE | wygładza do postaci renderu |
+| wnętrza z budowy, instalacje w stanie surowym | ⛔ NIE | jak wyżej |
+
+Do wszystkiego pozostałego: maska wyostrzająca po przeskalowaniu (`UnsharpMask`), siła dobrana
+do miękkości kadru. Zawsze porównać wycinek 1:1 przed wdrożeniem.
+
+---
+
 ## Źródła
 
 - [Carbon Design System — Spacing](https://carbondesignsystem.com/elements/spacing/overview/)

@@ -104,6 +104,27 @@ def img(base, w=900, cls="", lazy=True, sizes=None):
             f' width="{ww}" height="{hh}" alt="{opis(base)}"{load}>')
 
 
+def img_pas(base):
+    """Zdjęcie do szerokiego pasa nagłówkowego. Pas ma ~1350 punktów szerokości,
+    a na ekranie o gęstości 2x to 2700 pikseli — dlatego podajemy wariant
+    w maksymalnej dostępnej rozdzielczości, inaczej kadr wygląda miękko."""
+    duzy = {
+        "bus": ("img/bus-2400.webp", 2400, "img/bus-1400.webp", 1400,
+                "Samochód firmowy z logo i numerem telefonu"),
+        "wod-kan-05": ("img/wod-kan-05-2048.webp", 2048, "img/wod-kan-05-1600.webp", 1600, None),
+        "wod-kan-07": ("img/wod-kan-07-2048.webp", 2048, "img/wod-kan-07-1600.webp", 1600, None),
+        "rozdzielacz-03": ("img/rozdzielacz-03-2048.webp", 2048, "img/rozdzielacz-03-1600.webp", 1600, None),
+        "vaillant-03": ("img/vaillant-03-2400.webp", 2400, "img/vaillant-03-1600.webp", 1600,
+                        "Kocioł kondensacyjny Vaillant"),
+    }
+    if base not in duzy:
+        return img(base, lazy=False, sizes="100vw")
+    src2, w2, src1, w1, alt = duzy[base]
+    tekst = alt or opis(base)
+    return (f'<img src="{src1}" srcset="{src1} {w1}w, {src2} {w2}w" sizes="100vw" '
+            f'width="{w2}" height="{int(w2 * 0.38)}" alt="{tekst}" fetchpriority="high" decoding="async">')
+
+
 def zoom_fig(base, cls=""):
     """Kafel galerii otwierany w powiększeniu."""
     ww, hh = dims(base)
