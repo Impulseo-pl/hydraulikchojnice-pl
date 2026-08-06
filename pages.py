@@ -276,7 +276,7 @@ def index_body():
     # układ musi domykać się do pełnych rzędów po 4 kolumny, inaczej zostaje dziura
     marki = "\n".join(
         f'        <img src="{src}" alt="{nazwa}" style="height:{h}px" loading="lazy" decoding="async">'
-        for src, nazwa, h in MARKI * 10)
+        for src, nazwa, h in MARKI)
 
     bento = [
         ("zasobnik-02", "b-tall"), ("wod-kan-05", "b-wide"), ("rozdzielacz-02", ""),
@@ -364,7 +364,7 @@ def index_body():
 
 <section class="marks">
   <div class="wrap-wide">
-    <span class="marks-lab">Urządzenia, na których pracujemy</span>
+    <span class="marks-lab">Producenci, z którymi pracujemy</span>
     <div class="marks-view">
       <div class="marks-track">
 {marki}
