@@ -5,6 +5,8 @@ from photos import img, img_special, zoom_fig, gallery_groups, opis
 TEL = "+48 883 602 422"
 TEL_E164 = "+48883602422"
 MAIL = "stryszykirek@gmail.com"
+# adres docelowy: zmiana w jednym miejscu (formularz, przekierowanie po wysłaniu)
+SITE = "https://hydraulikchojnice.pl"
 
 USLUGI_12 = [
     "Instalacje wodno-kanalizacyjne",
@@ -86,8 +88,9 @@ def hero_block():
   <div class="wrap hero-in">
     <p class="kicker">Chojnice i okolice, 100 km</p>
     <h1>Instalacje C.O, wodno-kanalizacyjne, gazowe, ogrzewania podłogowego</h1>
-    <p class="hero-lead">Dwadzieścia lat pracy przy instalacjach w domach jednorodzinnych. Robimy od pierwszej rury
-      po rozruch i przeszkolenie, w umówionym terminie i za cenę, którą znają Państwo przed rozpoczęciem prac.</p>
+    <p class="hero-lead">Dwadzieścia lat pracy przy instalacjach, od domu w budowie po remont łazienki.
+      Robimy od pierwszej rury po rozruch i przeszkolenie, w umówionym terminie i za cenę, którą znają Państwo
+      przed rozpoczęciem prac.</p>
     <div class="hero-cta">
       <a class="btn btn-1" href="tel:{TEL_E164}">Zadzwoń <span class="num">{TEL}</span></a>
       <a class="btn btn-2" href="kontakt.html">Bezpłatna wycena</a>
@@ -378,7 +381,7 @@ def index_body():
 </section>
 
 {cta_block("Planują Państwo instalację? Wycenimy ją za darmo.",
-           "Zadzwońcie albo napiszcie. Przyjedziemy, obejrzymy zakres prac i podamy ostateczną cenę.")}
+           "Wystarczy telefon albo wiadomość. Przyjedziemy, obejrzymy zakres prac i podamy ostateczną cenę.")}
 """
 
 
@@ -395,10 +398,10 @@ OFERTA_OPISY = {
                               "i rozruchem. Jako autoryzowany montażysta Vaillant prowadzimy też ich serwis.",
     "Montaż kotłów na pellet oraz stałopalnych": "Montaż kotła, podłączenie do komina i instalacji, uruchomienie "
                                                  "oraz przeszkolenie z obsługi i ustawień.",
-    "Montaż pomp ciepła": "Dobór i montaż pompy ciepła wraz z zasobnikiem i automatyką. Współpracujemy z pompami "
-                          "Vaillant, na które mamy autoryzację producenta.",
-    "Montaż instalacji gazowych": "Wykonanie instalacji gazowej i podłączenie urządzeń. Prace prowadzimy tak, "
-                                  "żeby instalacja przeszła odbiór bez uwag.",
+    "Montaż pomp ciepła": "Dobór i montaż pompy ciepła wraz z zasobnikiem i automatyką. Montujemy pompy ciepła "
+                          "Vaillant, na które mamy szkolenie autoryzacyjne producenta.",
+    "Montaż instalacji gazowych": "Wykonanie instalacji gazowej i podłączenie urządzeń. Instalację przygotowujemy do próby "
+                                  "szczelności i odbioru.",
     "Montaż przydomowych oczyszczalni ścieków": "Montaż oczyszczalni przy domach bez dostępu do kanalizacji, "
                                                 "wraz z rozprowadzeniem i rozruchem.",
     "Montaż odkurzaczy centralnych": "Rozprowadzenie rur i gniazd na etapie budowy oraz montaż jednostki centralnej.",
@@ -496,14 +499,21 @@ def partner_body():
                                     ("pompa ciepła Vaillant", ""), ("zasobnik ciepłej wody Vaillant", "b-wide"),
                                     ("jednostka pompy ciepła Vaillant", "b-wide")], start=1))
 
+    CERTYFIKATY = [
+        (3, "Kotły gazowe, instalacje, pierwsze uruchomienia", "27 września 2023"),
+        (2, "Przeglądy kotłów wydłużające gwarancję", "2 lipca 2024"),
+        (1, "Pompy ciepła PCP Split i Monoblok, instalacje", "13 marca 2025"),
+    ]
     certy = "\n".join(
         f"""      <figure style="margin:0;background:#fff;border:1px solid var(--line);border-radius:4px;overflow:hidden;cursor:zoom-in"
-        data-zoom="img/certyfikat-{i}-1400.webp" data-alt="Certyfikat Vaillant numer {i}" data-cap="{t}" tabindex="0">
-        <img src="img/certyfikat-{i}-700.webp" width="495" height="700" alt="Certyfikat Vaillant, {t}" loading="lazy" decoding="async">
-        <figcaption style="padding:14px 16px;font-family:var(--m);font-size:12px;letter-spacing:.05em;color:var(--ink-2)">{t}</figcaption>
+        data-zoom="img/certyfikat-{i}-1400.webp" data-alt="Zaświadczenie Vaillant, szkolenie autoryzacyjne: {t}"
+        data-cap="Szkolenie autoryzacyjne Vaillant, {t}, {d}" tabindex="0">
+        <img src="img/certyfikat-{i}-700.webp" width="495" height="700"
+          alt="Zaświadczenie Vaillant dla Patryka Stryszyka, szkolenie autoryzacyjne: {t}" loading="lazy" decoding="async">
+        <figcaption style="padding:14px 16px;font-family:var(--m);font-size:12px;letter-spacing:.05em;color:var(--ink-2)">
+          {t}<br><span style="color:var(--ink-3)">{d}</span></figcaption>
       </figure>"""
-        for i, t in enumerate(["Szkolenie z montażu i serwisu kotłów", "Szkolenie z pomp ciepła",
-                               "Autoryzacja serwisowa producenta"], start=1))
+        for i, t, d in CERTYFIKATY)
 
     return f"""{strona_head("Partner", "Autoryzowany montaż i serwis Vaillant",
                             "Pracujemy na urządzeniach Vaillant i mamy autoryzację producenta na ich montaż oraz serwis. "
@@ -554,8 +564,9 @@ def partner_body():
     <div class="head rv" style="text-align:center;margin-inline:auto">
       <p class="kicker" style="justify-content:center">Certyfikaty</p>
       <h2>Autoryzacja producenta</h2>
-      <p class="lead" style="margin-inline:auto">Certyfikaty ze szkoleń Vaillant, potwierdzające uprawnienia do montażu
-        i serwisu. Wystawione są na Patryka Stryszyka, który prowadzi montaże razem z Ireneuszem.</p>
+      <p class="lead" style="margin-inline:auto">Zaświadczenia ze szkoleń autoryzacyjnych Vaillant: kotły gazowe,
+        przeglądy wydłużające gwarancję i pompy ciepła. Wystawione są na Patryka Stryszyka, który prowadzi
+        montaże razem z Ireneuszem.</p>
     </div>
     <div class="rv" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px">
 {certy}
@@ -579,7 +590,7 @@ def o_nas_body():
   <div class="wrap">
     <div class="hidden-layer">
       <div class="rv">
-        <h2>Robimy jedno i robimy to od dwudziestu lat</h2>
+        <h2>Ta sama ekipa od pierwszej rury do odbioru</h2>
         <p class="lead">Instalacje C.O, wodno-kanalizacyjne, gazowe i ogrzewania podłogowego to dla nas codzienność.
           Jeśli oczekują Państwo fachowego doradztwa w tych sprawach, wykonania od A do Z, wykonania w ustalonym
           terminie oraz wyceny, po której wiadomo, ile instalacja będzie kosztować, są Państwo w odpowiednim miejscu.</p>
@@ -684,7 +695,7 @@ def kontakt_body():
         <form data-form action="https://formsubmit.co/{MAIL}" method="POST">
           <input type="hidden" name="_subject" value="Zapytanie ze strony hydraulikchojnice.pl">
           <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_next" value="https://hydraulikchojnice.pl/dziekujemy.html">
+          <input type="hidden" name="_next" value="{SITE}/dziekujemy.html">
           <input type="hidden" name="_captcha" value="false">
           <div class="hp"><label for="_honey">Proszę zostawić puste</label>
             <input id="_honey" type="text" name="_honey" tabindex="-1" autocomplete="off"></div>
@@ -831,9 +842,9 @@ BLAD404 = """<section class="sec mid">
 PAGES = [
     {
         "file": "index.html",
-        "title": "Hydraulik Chojnice, instalacje C.O, wod-kan, gazowe i podłogowe | Ireneusz Stryszyk",
-        "desc": "Instalacje C.O, wodno-kanalizacyjne, gazowe i ogrzewania podłogowego. Montaż kotłów i pomp ciepła, "
-                "autoryzacja Vaillant. Chojnice i okolice w promieniu 100 km. Bezpłatna wycena.",
+        "title": "Hydraulik Chojnice, instalacje C.O, wod-kan i gaz | Stryszyk",
+        "desc": "Instalacje C.O, wod-kan, gazowe i ogrzewanie podłogowe. Montaż kotłów i pomp ciepła, "
+                "Vaillant. Chojnice i 100 km. Bezpłatna wycena, 20 lat doświadczenia.",
         "prio": "1.0",
         "hero": True,
         "schema": SCHEMA_FIRMA + _schema_faq(),
@@ -843,9 +854,9 @@ PAGES = [
     },
     {
         "file": "oferta.html",
-        "title": "Oferta, zakres usług hydraulicznych | Ireneusz Stryszyk, Chojnice",
-        "desc": "Instalacje wod-kan i C.O, ogrzewanie podłogowe, kotły gazowe i na pellet, pompy ciepła, instalacje "
-                "gazowe, oczyszczalnie, białe montaże, przeróbki łazienek i awarie. Wycena bezpłatna.",
+        "title": "Oferta, zakres usług hydraulicznych | Hydraulik Chojnice",
+        "desc": "Instalacje wod-kan i C.O, ogrzewanie podłogowe, kotły gazowe i na pellet, pompy ciepła, "
+                "oczyszczalnie, białe montaże i awarie. Chojnice, wycena bezpłatna.",
         "prio": "0.9",
         "schema": SCHEMA_FIRMA,
         "foot": "Pełen zakres prac instalacyjnych przy budowie domu i remoncie: woda, kanalizacja, ogrzewanie, "
@@ -854,7 +865,7 @@ PAGES = [
     },
     {
         "file": "realizacje.html",
-        "title": "Realizacje, zdjęcia z montaży instalacji | Ireneusz Stryszyk, Chojnice",
+        "title": "Realizacje, zdjęcia z naszych montaży | Hydraulik Chojnice",
         "desc": "Zdjęcia z naszych budów: kotłownie, rozdzielacze, ogrzewanie podłogowe, podejścia wodno-kanalizacyjne "
                 "i wentylacja. Prace wykonane w Chojnicach i okolicy.",
         "prio": "0.8",
@@ -865,7 +876,7 @@ PAGES = [
     },
     {
         "file": "partner.html",
-        "title": "Autoryzowany montaż i serwis Vaillant | Ireneusz Stryszyk, Chojnice",
+        "title": "Montaż i serwis Vaillant | Hydraulik Chojnice, Stryszyk",
         "desc": "Montaż i serwis kotłów gazowych oraz pomp ciepła Vaillant, sprzedaż urządzeń. Certyfikaty "
                 "ze szkoleń producenta. Chojnice i okolice.",
         "prio": "0.8",
@@ -876,7 +887,7 @@ PAGES = [
     },
     {
         "file": "o-nas.html",
-        "title": "O nas, dwadzieścia lat przy instalacjach | Ireneusz Stryszyk, Chojnice",
+        "title": "O nas, 20 lat przy instalacjach | Hydraulik Chojnice",
         "desc": "Firma z Chojnic prowadzona przez Ireneusza i Patryka Stryszyków. Dwadzieścia lat pracy "
                 "przy instalacjach C.O, wod-kan, gazowych i ogrzewaniu podłogowym.",
         "prio": "0.6",
@@ -887,7 +898,7 @@ PAGES = [
     },
     {
         "file": "kontakt.html",
-        "title": "Kontakt, bezpłatna wycena instalacji | Ireneusz Stryszyk, Chojnice",
+        "title": "Kontakt, bezpłatna wycena | Hydraulik Chojnice, Stryszyk",
         "desc": "Telefon +48 883 602 422, e-mail i formularz kontaktowy. Bezpłatna wycena instalacji "
                 "w Chojnicach i okolicy do 100 km.",
         "prio": "0.9",

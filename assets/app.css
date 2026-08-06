@@ -112,8 +112,11 @@ body.hero-page .top.is-stuck .burger span{background:var(--ink)}
 body.hero-page .top.is-stuck .brand .logo-light{display:none}
 body.hero-page .top.is-stuck .brand .logo-dark{display:block}
 @media (max-width:900px){
-  body.hero-page .nav.is-open a{color:var(--ink-2)}
-  body.hero-page .nav.is-open .tel-btn{color:#fff!important}
+  /* rozwinięte menu ma jasne tło, więc linki muszą wrócić do ciemnego koloru */
+  body.hero-page .top .nav.is-open a{color:var(--ink-2)}
+  body.hero-page .top .nav.is-open a:hover,
+  body.hero-page .top .nav.is-open a[aria-current="page"]{color:var(--ink)}
+  body.hero-page .top .nav.is-open .tel-btn{color:#fff!important}
 }
 
 /* ——— hero ——— */
