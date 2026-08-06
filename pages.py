@@ -70,6 +70,16 @@ HERO = [
 ]
 
 
+WYRAZY_NIEROZDZIELNE = ["wodno-kanalizacyjne", "wodno-kanalizacyjnych", "wodno-kanalizacyjnej", "wod-kan"]
+
+
+def chron(tekst):
+    """Wyraz złożony ma przechodzić do nowej linii w całości, nie pękać po dywizie."""
+    for w in WYRAZY_NIEROZDZIELNE:
+        tekst = tekst.replace(w, f'<span class="nw">{w}</span>')
+    return tekst
+
+
 # ─────────────────────────── kawałki wspólne ───────────────────────────
 
 def hero_block():
@@ -87,7 +97,7 @@ def hero_block():
   </div>
   <div class="wrap hero-in">
     <p class="kicker">Chojnice i okolice, 100 km</p>
-    <h1>Instalacje C.O, wodno-kanalizacyjne, gazowe, ogrzewania podłogowego</h1>
+    <h1>Instalacje C.O, <span class="nw">wodno-kanalizacyjne,</span> gazowe, ogrzewania podłogowego</h1>
     <p class="hero-lead">Dwadzieścia lat pracy przy instalacjach, od domu w budowie po remont łazienki.
       Robimy od pierwszej rury po rozruch i przeszkolenie, w umówionym terminie i za cenę, którą znają Państwo
       przed rozpoczęciem prac.</p>
@@ -209,7 +219,7 @@ def _schema_faq():
 def index_body():
     kafelki = "\n".join(
         f'      <a class="tile" href="oferta.html">{img(b, cls="")}'
-        f'<span class="cap"><span class="idx">{i:02d}</span><span class="txt">{t}</span></span></a>'
+        f'<span class="cap"><span class="idx">{i:02d}</span><span class="txt">{chron(t)}</span></span></a>'
         for i, (b, t) in enumerate(KAFELKI, start=1))
 
     kroki = "\n".join(
@@ -217,7 +227,7 @@ def index_body():
         for n, t, o in PROCES)
 
     oferta = "\n".join(
-        f'      <a href="oferta.html"><span class="n">{i:02d}</span><span class="t">{u}</span></a>'
+        f'      <a href="oferta.html"><span class="n">{i:02d}</span><span class="t">{chron(u)}</span></a>'
         for i, u in enumerate(USLUGI_12, start=1))
 
     miasta = "\n".join(f'      <span>{m}</span>' for m in MIASTA)
@@ -417,7 +427,7 @@ def oferta_body():
     for i, u in enumerate(USLUGI_12, start=1):
         wiersze.append(f"""      <div class="step" style="border-right:0;border-bottom:1px solid var(--line);padding:24px 0">
         <span class="n">{i:02d}</span>
-        <h3 style="margin:10px 0 8px">{u}</h3>
+        <h3 style="margin:10px 0 8px">{chron(u)}</h3>
         <p style="max-width:78ch">{OFERTA_OPISY[u]}</p>
       </div>""")
     lista = "\n".join(wiersze)
@@ -465,14 +475,14 @@ def realizacje_body():
     for tytul, lista in gallery_groups():
         kafle = "\n".join("      " + zoom_fig(b) for b in lista)
         sekcje.append(f"""    <div class="group-head rv">
-      <h3>{tytul}</h3>
+      <h3>{chron(tytul)}</h3>
       <span class="count">{len(lista)} zdjęć</span>
     </div>
     <div class="mosaic rv">
 {kafle}
     </div>""")
     return f"""{strona_head("Realizacje", "Zdjęcia z naszych montaży",
-                            "Kotłownie, rozdzielacze, ogrzewanie podłogowe, podejścia wodno-kanalizacyjne i wentylacja. "
+                            "Kotłownie, rozdzielacze, ogrzewanie podłogowe, podejścia <span class=\"nw\">wodno-kanalizacyjne</span> i wentylacja. "
                             "Wszystkie zdjęcia pochodzą z budów, na których pracowaliśmy. Kliknięcie powiększa kadr.",
                             None)}
 

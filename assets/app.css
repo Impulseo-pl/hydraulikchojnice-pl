@@ -54,6 +54,8 @@ body{
 img{max-width:100%;height:auto;display:block}
 a{color:inherit}
 h1,h2,h3,h4{font-family:var(--h);font-weight:700;letter-spacing:-.021em;line-height:1.08;margin:0}
+/* wyraz złożony (wodno-kanalizacyjne) ma przechodzić do nowej linii w całości */
+.nw{white-space:nowrap}
 p{margin:0}
 :focus-visible{outline:2.5px solid var(--teal);outline-offset:3px;border-radius:2px}
 
@@ -129,7 +131,8 @@ body.hero-page .top.is-stuck .brand .logo-dark{display:block}
 .hero::after{content:"";position:absolute;inset:0;background:
   linear-gradient(180deg,rgba(9,20,31,.62) 0%,rgba(9,20,31,.25) 34%,rgba(9,20,31,.72) 78%,rgba(9,20,31,.9) 100%)}
 .hero-in{position:relative;z-index:2;color:#fff;padding:clamp(90px,14vh,150px) 0 clamp(34px,5vh,54px)}
-.kicker{font-family:var(--m);font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.82);display:flex;align-items:center;gap:12px}
+.kicker{font-family:var(--m);font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);display:flex;align-items:center;gap:12px}
+.hero .kicker,.sec-dark .kicker,.cta .kicker{color:rgba(255,255,255,.82)}
 .kicker::before{content:"";width:34px;height:1.5px;background:var(--accent);display:block}
 .hero h1{font-size:clamp(31px,5.4vw,63px);max-width:16ch;margin:20px 0 0;font-weight:700;letter-spacing:-.028em;text-wrap:balance}
 .hero h1 em{font-style:normal;color:#ffd9de}
@@ -144,13 +147,13 @@ body.hero-page .top.is-stuck .brand .logo-dark{display:block}
 .btn-3{border-color:var(--line);color:var(--ink);background:#fff}
 .btn-3:hover{border-color:var(--ink);transform:translateY(-2px)}
 .btn .num{font-family:var(--m);font-size:15px}
-.hero-cap{position:relative;z-index:2;margin-top:26px;padding-top:14px;border-top:1px solid rgba(255,255,255,.22);
+.hero-cap{position:relative;z-index:2;margin-top:26px;padding-top:16px;border-top:1px solid rgba(255,255,255,.22);
   font-family:var(--m);font-size:12.5px;letter-spacing:.05em;color:rgba(255,255,255,.72);min-height:2.4em}
 
 /* ——— pasek haseł pod hero ——— */
 .strip{background:var(--navy);color:#fff}
 .strip-in{width:min(96%,1440px);margin-inline:auto;display:grid;grid-template-columns:repeat(5,1fr)}
-.strip .cell{padding:26px 18px;text-align:center;border-left:1px solid rgba(255,255,255,.16);display:flex;flex-direction:column;justify-content:center;gap:6px}
+.strip .cell{padding:26px 24px;text-align:center;border-left:1px solid rgba(255,255,255,.16);display:flex;flex-direction:column;justify-content:center;gap:6px}
 .strip .cell:first-child{border-left:0}
 .strip .k{font-family:var(--h);font-size:clamp(15px,1.5vw,19px);font-weight:600;letter-spacing:-.015em}
 .strip .k .big{font-family:var(--h);font-size:clamp(22px,2.4vw,30px);font-weight:700}
@@ -171,8 +174,7 @@ section{position:relative}
 .sec-dark{background:var(--navy);color:#fff}
 .sec-dark .lead,.sec-dark .muted{color:rgba(255,255,255,.78)}
 .head{max-width:62ch}
-.head .kicker{color:var(--ink-3)}
-.sec-dark .head .kicker{color:rgba(255,255,255,.75)}
+.sec-dark .head .kicker{color:rgba(255,255,255,.78)}
 h2{font-size:clamp(27px,3.5vw,43px);margin-top:16px;letter-spacing:-.026em;text-wrap:balance}
 h3{font-size:clamp(19px,2vw,23px);letter-spacing:-.02em}
 .lead{margin-top:16px;font-size:clamp(16px,1.4vw,18.5px);color:var(--ink-2);max-width:62ch}
@@ -218,7 +220,7 @@ h3{font-size:clamp(19px,2vw,23px);letter-spacing:-.02em}
 .hl-frames figcaption{position:absolute;left:0;right:0;bottom:0;padding:30px 13px 11px;font-family:var(--m);font-size:11px;letter-spacing:.08em;
   color:#fff;background:linear-gradient(180deg,rgba(9,20,31,0),rgba(9,20,31,.72))}
 .facts{margin:26px 0 0;padding:0;list-style:none;display:grid;gap:0;border-top:1px solid var(--line)}
-.facts li{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.facts li{display:flex;gap:24px;padding:16px 0;border-bottom:1px solid var(--line);align-items:baseline}
 .sec-dark .facts,.sec-dark .facts li{border-color:rgba(255,255,255,.18)}
 .facts .lab{font-family:var(--m);font-size:11.5px;letter-spacing:.12em;color:var(--accent);flex:0 0 92px;text-transform:uppercase}
 .sec-dark .facts .lab{color:#ffb3bd}
@@ -229,7 +231,7 @@ h3{font-size:clamp(19px,2vw,23px);letter-spacing:-.02em}
 /* ——— oferta: lista pozycji ——— */
 .offer{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:46px;border-top:1px solid var(--line);border-left:1px solid var(--line)}
 .offer a,.offer div{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:10px;text-align:center;
-  padding:28px 18px 32px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);text-decoration:none;
+  padding:28px 26px 32px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);text-decoration:none;
   transition:background .22s,transform .22s;min-height:132px}
 .offer a:hover{background:#fff;transform:translateY(-2px)}
 .offer .n{font-family:var(--m);font-size:11.5px;letter-spacing:.14em;color:var(--ink-3)}
@@ -304,7 +306,7 @@ h3{font-size:clamp(19px,2vw,23px);letter-spacing:-.02em}
 /* ——— obszar ——— */
 .area{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(26px,4vw,60px);align-items:center}
 .towns{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
-.towns span{font-family:var(--m);font-size:12.8px;letter-spacing:0;padding:8px 12px;border:1px solid var(--line);border-radius:99px;background:#fff;white-space:nowrap}
+.towns span{font-family:var(--m);font-size:12.8px;letter-spacing:0;padding:8px 16px;border:1px solid var(--line);border-radius:99px;background:#fff;white-space:nowrap}
 .sec-dark .towns span{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.24);color:#fff}
 .towns .plus{background:var(--accent);border-color:var(--accent);color:#fff}
 .sec-dark .towns .plus{background:var(--accent);border-color:var(--accent)}
@@ -313,14 +315,14 @@ h3{font-size:clamp(19px,2vw,23px);letter-spacing:-.02em}
 /* ——— faq ——— */
 .faq{margin-top:40px;border-top:1px solid var(--line)}
 .faq details{border-bottom:1px solid var(--line)}
-.faq summary{cursor:pointer;list-style:none;padding:20px 44px 20px 0;position:relative;
+.faq summary{cursor:pointer;list-style:none;padding:22px 48px 22px 0;position:relative;
   font-family:var(--h);font-weight:600;font-size:clamp(16.5px,1.7vw,19px);letter-spacing:-.015em;transition:color .2s}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary:hover{color:var(--accent)}
 .faq summary::after{content:"";position:absolute;right:6px;top:50%;width:11px;height:11px;margin-top:-7px;
   border-right:1.6px solid var(--ink-3);border-bottom:1.6px solid var(--ink-3);transform:rotate(45deg);transition:transform .25s}
 .faq details[open] summary::after{transform:rotate(-135deg);margin-top:-2px}
-.faq .ans{padding:0 0 22px;color:var(--ink-2);max-width:74ch;font-size:16.4px}
+.faq .ans{padding:0 0 24px;color:var(--ink-2);max-width:74ch;font-size:16.4px}
 
 /* ——— cta ——— */
 .cta{background:var(--navy);color:#fff;border-radius:var(--r);padding:clamp(34px,5vw,62px);display:grid;grid-template-columns:1.15fr auto;gap:30px;align-items:center}
@@ -348,7 +350,7 @@ textarea{min-height:130px;resize:vertical}
 /* ——— kontakt ——— */
 .contact{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,4vw,66px);align-items:start}
 .cards{display:grid;gap:0;border-top:1px solid var(--line)}
-.card{padding:20px 0;border-bottom:1px solid var(--line)}
+.card{padding:22px 0;border-bottom:1px solid var(--line)}
 .card .lab{font-family:var(--m);font-size:11.5px;letter-spacing:.13em;color:var(--ink-3);text-transform:uppercase}
 .card .val{font-family:var(--h);font-size:clamp(18px,2vw,22px);font-weight:600;letter-spacing:-.02em;margin-top:7px;display:block;text-decoration:none}
 .card a.val:hover{color:var(--accent)}
