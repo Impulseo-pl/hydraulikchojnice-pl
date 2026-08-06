@@ -209,7 +209,7 @@ def _schema_faq():
 def index_body():
     kafelki = "\n".join(
         f'      <a class="tile" href="oferta.html">{img(b, cls="")}'
-        f'<span class="cap"><span class="idx">{i:02d}</span>{t}</span></a>'
+        f'<span class="cap"><span class="idx">{i:02d}</span><span class="txt">{t}</span></span></a>'
         for i, (b, t) in enumerate(KAFELKI, start=1))
 
     kroki = "\n".join(
@@ -228,7 +228,7 @@ def index_body():
 
     # układ musi domykać się do pełnych rzędów po 4 kolumny, inaczej zostaje dziura
     bento = [
-        ("zasobnik-02", "b-tall"), ("wod-kan-05", "b-wide"), ("zasobnik-01", ""),
+        ("zasobnik-02", "b-tall"), ("wod-kan-05", "b-wide"), ("rozdzielacz-02", ""),
         ("podlogowka-14", "b-wide"), ("sterowanie-02", ""),
     ]
     bento_html = "\n".join(
@@ -490,15 +490,18 @@ def realizacje_body():
 # ─────────────────────────── partner ───────────────────────────
 
 def partner_body():
+    URZADZENIA = [
+        (1, "kotły gazowe Vaillant"), (2, "pompa ciepła Vaillant"), (3, "kocioł kondensacyjny Vaillant"),
+        (4, "kocioł wiszący Vaillant"), (5, "zasobnik i kocioł Vaillant"),
+    ]
     urzadzenia = "\n".join(
-        f'      <figure class="{c}" data-zoom="img/vaillant-{i:02d}-1600.webp" data-alt="Urządzenie Vaillant, {t}" '
+        f'      <figure data-zoom="img/vaillant-{i:02d}-1600.webp" data-alt="Urządzenie Vaillant, {t}" '
         f'data-cap="{t}" tabindex="0">'
         f'<img src="img/vaillant-{i:02d}-900.webp" srcset="img/vaillant-{i:02d}-900.webp 900w, img/vaillant-{i:02d}-1600.webp 1600w" '
         f'width="900" height="700" alt="Urządzenie Vaillant, {t}" loading="lazy" decoding="async"></figure>'
-        for i, (t, c) in enumerate([("kocioł gazowy Vaillant", "b-wide"), ("kocioł kondensacyjny Vaillant", ""),
-                                    ("pompa ciepła Vaillant", ""), ("zasobnik ciepłej wody Vaillant", "b-wide"),
-                                    ("jednostka pompy ciepła Vaillant", "b-wide")], start=1))
+        for i, t in URZADZENIA)
 
+    # tytuły i daty spisane ze skanów zaświadczeń, kolejność chronologiczna
     CERTYFIKATY = [
         (3, "Kotły gazowe, instalacje, pierwsze uruchomienia", "27 września 2023"),
         (2, "Przeglądy kotłów wydłużające gwarancję", "2 lipca 2024"),
@@ -553,7 +556,7 @@ def partner_body():
       <h2>Urządzenia, na których pracujemy</h2>
       <p class="lead">Kotły kondensacyjne, pompy ciepła i zasobniki ciepłej wody Vaillant.</p>
     </div>
-    <div class="bento rv">
+    <div class="devices rv">
 {urzadzenia}
     </div>
   </div>
@@ -616,7 +619,7 @@ def o_nas_body():
       <p class="kicker">Zasady, przy których zostajemy</p>
       <h2>Cztery rzeczy, które są u nas stałe</h2>
     </div>
-    <ul class="facts rv" style="margin-top:34px">
+    <ul class="facts rv" style="margin-top:34px;max-width:96ch">
       <li><span class="lab">Wycena</span><span class="val">Przyjazd i wycena są bezpłatne. Cena po oględzinach jest ceną ostateczną.</span></li>
       <li><span class="lab">Termin</span><span class="val">Termin ustalamy przy wycenie i trzymamy się go.</span></li>
       <li><span class="lab">Odbiór</span><span class="val">Instalację uruchamiamy, regulujemy i tłumaczymy, jak jej używać.</span></li>
