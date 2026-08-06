@@ -147,7 +147,7 @@
       if (tel && mail && !tel.value.trim() && !mail.value.trim()) {
         e.preventDefault();
         if (msg) {
-          msg.textContent = 'Prosimy podać telefon albo adres e-mail, żebyśmy mogli odpowiedzieć.';
+          msg.textContent = 'Podaj telefon albo adres e-mail, żebyśmy mogli odpowiedzieć.';
           msg.style.color = '#8e2434';
         }
         tel.focus();

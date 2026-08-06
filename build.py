@@ -16,7 +16,6 @@ MENU = [
     ("oferta.html", "Oferta"),
     ("realizacje.html", "Realizacje"),
     ("partner.html", "Partner"),
-    ("o-nas.html", "O nas"),
     ("kontakt.html", "Kontakt"),
 ]
 
@@ -51,7 +50,7 @@ def head(p):
   <link rel="manifest" href="site.webmanifest">
   <link rel="preload" href="assets/fonts/barlow-600-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/app.css?v=26">
+  <link rel="stylesheet" href="assets/app.css?v=27">
 {schema}</head>
 <body{' class="hero-page"' if p.get('hero') else ''}>
 <a class="skip" href="#main">Przejdź do treści</a>
@@ -102,7 +101,6 @@ def foot(p):
           <li><a href="oferta.html">Oferta</a></li>
           <li><a href="realizacje.html">Realizacje</a></li>
           <li><a href="partner.html">Partner Vaillant</a></li>
-          <li><a href="o-nas.html">O nas</a></li>
           <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
       </div>
@@ -137,7 +135,7 @@ def foot(p):
   <p class="lb-cap"></p>
 </div>
 
-<script src="assets/app.js?v=4"></script>
+<script src="assets/app.js?v=5"></script>
 </body>
 </html>
 """

@@ -31,11 +31,11 @@ KAFELKI = [
 ]
 
 PROCES = [
-    ("01", "Telefon", "Opisujecie zakres prac u siebie, a my wspólnie ustalamy termin spotkania na miejscu."),
+    ("01", "Telefon", "Opisujesz zakres prac u siebie, a my wspólnie ustalamy termin spotkania na miejscu."),
     ("02", "Wycena", "Cena ustalona na podstawie wyceny jest ceną ostateczną, bez ukrytych kosztów."),
     ("03", "Wykonanie", "Wykonujemy instalacje według wcześniejszych ustaleń, uruchamiamy, konfigurujemy, regulujemy, "
                         "tłumaczymy zasadę działania oraz uczymy użytkowania instalacji."),
-    ("04", "Odbiór i gwarancja", "Na wykonaną instalację dostajecie gwarancję, protokoły z prób szczelności "
+    ("04", "Odbiór i gwarancja", "Na wykonaną instalację dostajesz gwarancję, protokoły z prób szczelności "
                                  "oraz stały kontakt z nami w razie problemów."),
 ]
 
@@ -135,9 +135,9 @@ def hero_block():
   </div>
   <div class="wrap hero-in">
     <p class="kicker">Chojnice i okolice, 100 km</p>
-    <h1>Instalacje w waszym domu: C.O, <span class="nw">wodno-kanalizacyjne</span>, gazowe, podłogowe</h1>
+    <h1>Instalacje w twoim domu: C.O, <span class="nw">wodno-kanalizacyjne</span>, gazowe, podłogowe</h1>
     <p class="hero-lead">Dwadzieścia lat przy instalacjach, w Chojnicach i okolicy.
-      Od domu w budowie po remont łazienki, za cenę, którą znacie przed startem.</p>
+      Od domu w budowie po remont łazienki, za cenę, którą znasz przed startem.</p>
     <div class="hero-cta">
       <a class="btn btn-1" href="tel:{TEL_E164}">Zadzwoń <span class="num">{TEL}</span></a>
       <a class="btn btn-2" href="kontakt.html">Bezpłatna wycena</a>
@@ -321,7 +321,7 @@ def index_body():
         <h2>Najważniejsze znika pod wylewką</h2>
         <p class="lead">Rury w posadzce i w bruzdach ścian znikają na kilkanaście lat. Poprawka po odbiorze
           oznacza skucie wylewki. Dlatego instalację sprawdzamy pod ciśnieniem, zanim przyjedzie ekipa
-          od jastrychu, a protokół z próby zostaje u was.</p>
+          od jastrychu, a protokół z próby zostaje u ciebie.</p>
       </div>
       <div class="hl-frames rv">
         <figure data-zoom="img/podlogowka-17-1600.webp" data-alt="{opis('podlogowka-17')}" data-cap="{opis('podlogowka-17')}" tabindex="0">
@@ -394,7 +394,7 @@ def index_body():
         <p class="kicker">Obszar działania</p>
         <h2>Dojeżdżamy do was</h2>
         <p class="lead">Pracujemy w Chojnicach i okolicy, przy większych zleceniach dojeżdżamy do 100 km.
-          Nie wiecie, czy dojedziemy do was? Wystarczy jeden telefon.</p>
+          Nie wiesz, czy dojedziemy do ciebie? Wystarczy jeden telefon.</p>
         <div class="towns">
 {miasta}
           <span class="plus">+ 100 km</span>
@@ -428,7 +428,7 @@ def index_body():
   </div>
 </section>
 
-{cta_block("Powiedzcie, co macie do zrobienia",
+{cta_block("Powiedz, co masz do zrobienia",
            "Przyjedziemy, obejrzymy zakres i podamy cenę. Przyjazd i wycena nic nie kosztują.")}
 """
 
@@ -501,8 +501,8 @@ def oferta_body():
   </div>
 </section>
 
-{cta_block("Nie wiecie, ile z tego potrzebujecie?",
-           "Zadzwońcie i opiszcie, co macie do zrobienia. Przyjedziemy, obejrzymy i podamy cenę, która się później nie zmieni.")}
+{cta_block("Nie wiesz, ile z tego potrzebujesz?",
+           "Zadzwoń i opisz, co masz do zrobienia. Przyjedziemy, obejrzymy i podamy cenę, która się później nie zmieni.")}
 """
 
 
@@ -529,8 +529,8 @@ def realizacje_body():
   </div>
 </section>
 
-{cta_block("Chcecie coś podobnego u siebie?",
-           "Zadzwońcie i powiedzcie, na jakim etapie jesteście. Przyjedziemy obejrzeć zakres prac.")}
+{cta_block("Chcesz coś podobnego u siebie?",
+           "Zadzwoń i powiedz, na jakim etapie jesteś. Przyjedziemy obejrzeć zakres prac.")}
 """
 
 
@@ -567,7 +567,7 @@ def partner_body():
 
     return f"""{strona_head("Partner", "Vaillant: sprzęt, gwarancja i przeglądy w jednych rękach",
                             "Mamy autoryzację Vaillanta na montaż i serwis. To znaczy, że kocioł montuje ktoś przeszkolony "
-                            "przez producenta, a wy nie szukacie osobno serwisu, gdy przyjdzie przegląd.", "vaillant-03")}
+                            "przez producenta, a ty nie szukasz osobno serwisu, gdy przyjdzie przegląd.", "vaillant-03")}
 
 <section class="sec" style="padding-top:0">
   <div class="wrap">
@@ -586,7 +586,7 @@ def partner_body():
         <p class="lead" style="margin-top:0">Producent uzależnia gwarancję od tego, kto montuje urządzenie.
           Dlatego montaż, pierwsze uruchomienie i konfigurację robi u nas osoba z autoryzacją, a przeglądy
           okresowe i naprawy w kolejnych latach zostają po naszej stronie.</p>
-        <p class="lead">Sprzęt kupujecie u nas albo we własnym zakresie. Montaż i rozruch wygląda tak samo.</p>
+        <p class="lead">Sprzęt kupujesz u nas albo we własnym zakresie. Montaż i rozruch wygląda tak samo.</p>
       </div>
     </div>
   </div>
@@ -618,63 +618,16 @@ def partner_body():
   </div>
 </section>
 
-{cta_block("Planujecie kocioł albo pompę ciepła?",
-           "Podpowiemy, co ma sens przy waszym domu i instalacji, i podamy cenę razem z montażem.")}
-"""
-
-
-# ─────────────────────────── o nas ───────────────────────────
-
-def o_nas_body():
-    return f"""{strona_head("O nas", "Dwie osoby, dwadzieścia lat przy instalacjach",
-                            "Usługi Hydrauliczne Ireneusz Stryszyk to firma z Chojnic. Pracujemy w dwie osoby, "
-                            "ojciec i syn, przy instalacjach w domach jednorodzinnych.", "bus")}
-
-<section class="sec" style="padding-top:0">
-  <div class="wrap">
-    <div class="hidden-layer">
-      <div class="rv">
-        <h2>Wycenia ten sam człowiek, który potem kładzie rury</h2>
-        <p class="lead">Pracujemy we dwóch, Ireneusz i Patryk. Na budowie macie cały czas tych samych ludzi,
-          bez podwykonawców i bez ekipy, która zmienia się w połowie roboty. Patryk ma autoryzację Vaillanta
-          na kotły gazowe i pompy ciepła.</p>
-      </div>
-      <div class="hl-frames rv">
-        <figure data-zoom="img/kotlownia-05-1600.webp" data-alt="{opis('kotlownia-05')}" data-cap="{opis('kotlownia-05')}" tabindex="0">
-          {img('kotlownia-05')}<figcaption>kotłownia po montażu</figcaption></figure>
-        <figure data-zoom="img/podlogowka-22-1600.webp" data-alt="{opis('podlogowka-22')}" data-cap="{opis('podlogowka-22')}" tabindex="0">
-          {img('podlogowka-22')}<figcaption>podłogówka</figcaption></figure>
-        <figure data-zoom="img/wod-kan-03-1600.webp" data-alt="{opis('wod-kan-03')}" data-cap="{opis('wod-kan-03')}" tabindex="0">
-          {img('wod-kan-03')}<figcaption>podejścia wod-kan</figcaption></figure>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="sec sec-dark">
-  <div class="wrap">
-    <div class="head rv">
-      <h2>Na co możecie liczyć</h2>
-    </div>
-    <ul class="facts rv" style="margin-top:34px;max-width:96ch">
-      <li><span class="lab">Termin</span><span class="val">Ustalamy go przy wycenie i trzymamy się go.</span></li>
-      <li><span class="lab">Odbiór</span><span class="val">Instalację uruchamiamy, regulujemy i tłumaczymy, jak jej używać.</span></li>
-      <li><span class="lab">Papiery</span><span class="val">Protokoły z prób szczelności i gwarancja zostają u was.</span></li>
-      <li><span class="lab">Potem</span><span class="val">Odbieramy telefon także po skończonej robocie.</span></li>
-    </ul>
-  </div>
-</section>
-
-{cta_block("Budujecie dom albo remontujecie łazienkę?",
-           "Zadzwońcie. Przyjedziemy obejrzeć, co jest do zrobienia, i powiemy, ile to kosztuje.")}
+{cta_block("Planujesz kocioł albo pompę ciepła?",
+           "Podpowiemy, co ma sens przy twoim domu i instalacji, i podamy cenę razem z montażem.")}
 """
 
 
 # ─────────────────────────── kontakt ───────────────────────────
 
 def kontakt_body():
-    return f"""{strona_head("Kontakt", "Zadzwońcie albo napiszcie",
-                            "Najszybciej jest zadzwonić. Jeśli wolicie napisać, zostawcie numer w formularzu. "
+    return f"""{strona_head("Kontakt", "Zadzwoń albo napisz",
+                            "Najszybciej jest zadzwonić. Jeśli wolisz napisać, zostaw numer w formularzu. "
                             "Oddzwaniamy po zejściu z budowy.", "wod-kan-07")}
 
 <section class="sec" style="padding-top:0">
@@ -685,7 +638,7 @@ def kontakt_body():
           <div class="card">
             <span class="lab">Telefon</span>
             <a class="val" href="tel:{TEL_E164}">{TEL}</a>
-            <p class="sub">Jeśli nie odbieramy, jesteśmy przy pracy. Spróbujcie za chwilę albo napiszcie.</p>
+            <p class="sub">Jeśli nie odbieramy, jesteśmy przy pracy. Spróbuj za chwilę albo napisz.</p>
           </div>
           <div class="card">
             <span class="lab">E-mail</span>
@@ -707,7 +660,7 @@ def kontakt_body():
 
       <div class="rv">
         <h2 style="font-size:clamp(22px,2.6vw,30px)">Zamów bezpłatną wycenę</h2>
-        <p class="lead" style="margin-bottom:26px">Napiszcie, co jest do zrobienia i na jakim etapie jest budowa.
+        <p class="lead" style="margin-bottom:26px">Napisz, co jest do zrobienia i na jakim etapie jest budowa.
           Odezwiemy się i umówimy oględziny.</p>
         <form data-form action="https://formsubmit.co/{MAIL}" method="POST">
           <input type="hidden" name="_subject" value="Zapytanie ze strony hydraulikchojnice.pl">
@@ -804,11 +757,11 @@ POLITYKA = """<section class="sec">
       (Google Ireland Limited). Strona hostowana jest w usłudze GitHub Pages.</p>
     <p>Na stronie głównej osadzona jest <strong>mapa Google Maps</strong> (Google Ireland Limited).
       Jej wyświetlenie oznacza połączenie z serwerami Google, które mogą zapisać w przeglądarce
-      pliki cookies i odczytać adres IP. Jeśli chcecie tego uniknąć, wystarczy nie otwierać strony
+      pliki cookies i odczytać adres IP. Jeśli chcesz tego uniknąć, wystarczy nie otwierać strony
       głównej albo zablokować pliki cookies w ustawieniach przeglądarki.
-      Jeśli chcecie tego uniknąć, wystarczy zadzwonić zamiast wypełniać formularz.</p>
+      Jeśli chcesz tego uniknąć, wystarczy zadzwonić zamiast wypełniać formularz.</p>
 
-    <h2>Wasze prawa</h2>
+    <h2>Twoje prawa</h2>
     <ul>
       <li>Dostęp do swoich danych i otrzymanie ich kopii.</li>
       <li>Sprostowanie danych, które są nieprawidłowe.</li>
@@ -905,17 +858,6 @@ PAGES = [
         "foot": "Autoryzowany montaż i serwis urządzeń Vaillant: kotły gazowe, pompy ciepła oraz sprzedaż "
                 "obu typów urządzeń.",
         "body": partner_body(),
-    },
-    {
-        "file": "o-nas.html",
-        "title": "O nas, 20 lat przy instalacjach | Hydraulik Chojnice",
-        "desc": "Firma z Chojnic prowadzona przez Ireneusza i Patryka Stryszyków. Dwadzieścia lat pracy "
-                "przy instalacjach C.O, wod-kan, gazowych i ogrzewaniu podłogowym.",
-        "prio": "0.6",
-        "schema": SCHEMA_FIRMA,
-        "foot": "Firma rodzinna z Chojnic. Pracujemy we dwóch przy instalacjach w domach jednorodzinnych, "
-                "od rozprowadzenia rur po rozruch urządzeń.",
-        "body": o_nas_body(),
     },
     {
         "file": "kontakt.html",
