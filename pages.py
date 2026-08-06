@@ -62,10 +62,11 @@ FAQ = [
      "Tak, na firmę albo na osobę prywatną. Dokument wystawiamy po zakończeniu prac."),
 ]
 
+# kolejność kadrów w hero: pierwszy widzi każdy, kto wejdzie na stronę
 HERO = [
+    ("hero-3", "Kotłownia po zakończeniu montażu"),
     ("hero-1", "Ogrzewanie podłogowe, pętle rozłożone przed wylewką"),
     ("hero-2", "Rozdzielacz ogrzewania podłogowego w szafce"),
-    ("hero-3", "Kotłownia po zakończeniu montażu"),
     ("hero-4", "Węzeł wodomierzowy z zaworami odcinającymi"),
 ]
 
