@@ -39,6 +39,8 @@ PROCES = [
                                  "oraz stały kontakt z nami w razie problemów."),
 ]
 
+MARKI = ["Vaillant", "Viessmann", "Afriso", "Salus"]
+
 MIASTA = ["Chojnice", "Sępólno Krajeńskie", "Kamień Krajeński", "Tuchola", "Człuchów"]
 
 FAQ = [
@@ -237,6 +239,8 @@ def index_body():
         for q, a in FAQ)
 
     # układ musi domykać się do pełnych rzędów po 4 kolumny, inaczej zostaje dziura
+    marki = "\n".join(f'        <span>{m}</span>' for m in MARKI * 2)
+
     bento = [
         ("zasobnik-02", "b-tall"), ("wod-kan-05", "b-wide"), ("rozdzielacz-02", ""),
         ("podlogowka-14", "b-wide"), ("sterowanie-02", ""),
@@ -336,6 +340,17 @@ def index_body():
           data-alt="{opis('kotlownia-06')}" data-cap="{opis('kotlownia-06')}" tabindex="0">
           {img('kotlownia-06')}
         </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="marks">
+  <div class="wrap-wide">
+    <span class="marks-lab">Urządzenia, na których pracujemy</span>
+    <div class="marks-view">
+      <div class="marks-track">
+{marki}
       </div>
     </div>
   </div>

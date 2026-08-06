@@ -51,7 +51,7 @@ def head(p):
   <link rel="manifest" href="site.webmanifest">
   <link rel="preload" href="assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/app.css?v=10">
+  <link rel="stylesheet" href="assets/app.css?v=14">
 {schema}</head>
 <body{' class="hero-page"' if p.get('hero') else ''}>
 <a class="skip" href="#main">Przejdź do treści</a>
@@ -59,8 +59,8 @@ def head(p):
 <header class="top">
   <div class="wrap top-in">
     <a class="brand" href="index.html" aria-label="{FIRMA}, strona główna">
-      <img class="logo-dark" src="img/logo.webp" width="180" height="41" alt="Logo Hydraulik Ireneusz Stryszyk">
-      <img class="logo-light" src="img/logo-jasne.webp" width="180" height="41" alt="" aria-hidden="true">
+      <img class="logo-dark" src="img/logo.webp" width="200" height="46" alt="Logo Hydraulik Ireneusz Stryszyk">
+      <img class="logo-light" src="img/logo-jasne.webp" width="200" height="46" alt="" aria-hidden="true">
     </a>
     <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -92,7 +92,7 @@ def foot(p):
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <img class="logo" src="img/logo-jasne.webp" width="180" height="41" alt="Hydraulik Ireneusz Stryszyk">
+        <img class="logo" src="img/logo-jasne.webp" width="191" height="44" alt="Hydraulik Ireneusz Stryszyk">
         <p>{opis}</p>
       </div>
       <div>

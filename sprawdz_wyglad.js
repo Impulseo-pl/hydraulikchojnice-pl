@@ -103,6 +103,19 @@
     });
   });
 
+  /* ── 2b. przyciski w menu: reguła `.nav a` bije `.tel-btn` specyficznością ── */
+  document.querySelectorAll('.nav a.tel-btn, .nav a.btn, nav a[class*="btn"]').forEach((el) => {
+    const s = getComputedStyle(el);
+    const pion = parseFloat(s.paddingTop), poziom = parseFloat(s.paddingLeft);
+    if (pion < 10 || poziom < 12) {
+      wynik.odstepy.push({
+        element: 'PRZYCISK W MENU ' + String(el.className).slice(0, 20),
+        strona: 'wewnątrz', padding: pion + '/' + poziom, minimum: '10/12',
+        tekst: el.textContent.trim().slice(0, 26) + ' (regula .nav a nadpisuje styl przycisku)',
+      });
+    }
+  });
+
   /* ── 3. łamanie nagłówków ── */
   document.querySelectorAll('h1, h2, h3').forEach((el) => {
     const t = el.textContent.trim();

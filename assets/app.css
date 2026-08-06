@@ -68,17 +68,17 @@ p{margin:0}
 /* ——— nagłówek ——— */
 .top{position:sticky;top:0;z-index:90;background:rgba(251,250,248,.92);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line-soft);transition:box-shadow .25s}
 .top.is-stuck{box-shadow:0 10px 30px -24px rgba(10,20,30,.5)}
-.top-in{display:flex;align-items:center;gap:22px;min-height:76px}
+.top-in{display:flex;align-items:center;gap:22px;min-height:84px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex:0 0 auto}
-.brand img{width:auto;height:39px}
+.brand img{width:auto;height:46px}
 .brand b{font-family:var(--h);font-size:15px;letter-spacing:-.01em;display:none}
 .nav{margin-left:auto;display:flex;align-items:center;gap:clamp(14px,2vw,28px)}
 .nav a{font-size:15.5px;text-decoration:none;color:var(--ink-2);padding:6px 0;position:relative;white-space:nowrap;transition:color .18s}
 .nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1.5px;background:var(--accent);transition:right .28s cubic-bezier(.2,.7,.3,1)}
 .nav a:hover,.nav a[aria-current="page"]{color:var(--ink)}
 .nav a:hover::after,.nav a[aria-current="page"]::after{right:0}
-.tel-btn{display:inline-flex;align-items:center;gap:9px;background:var(--accent);color:#fff!important;text-decoration:none;
-  font-family:var(--m);font-size:14.5px;letter-spacing:.01em;padding:11px 17px;border-radius:var(--r);transition:background .2s,transform .2s}
+.tel-btn,.nav a.tel-btn{display:inline-flex;align-items:center;gap:9px;background:var(--accent);color:#fff!important;text-decoration:none;
+  font-family:var(--m);font-size:14.5px;letter-spacing:.01em;padding:13px 20px;border-radius:var(--r);transition:background .2s,transform .2s}
 .tel-btn::after{display:none}
 .tel-btn:hover{background:var(--accent-dark);transform:translateY(-1px)}
 .burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);border-radius:var(--r);width:44px;height:40px;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:4.5px}
@@ -89,8 +89,8 @@ p{margin:0}
 
 @media (max-width:900px){
   .burger{display:flex}
-  .nav{position:fixed;inset:76px 0 auto 0;background:var(--paper);flex-direction:column;align-items:stretch;gap:0;
-    padding:6px var(--pad) 22px;border-bottom:1px solid var(--line);transform:translateY(-12px);opacity:0;pointer-events:none;transition:.25s;max-height:calc(100svh - 76px);overflow:auto}
+  .nav{position:fixed;inset:84px 0 auto 0;background:var(--paper);flex-direction:column;align-items:stretch;gap:0;
+    padding:6px var(--pad) 22px;border-bottom:1px solid var(--line);transform:translateY(-12px);opacity:0;pointer-events:none;transition:.25s;max-height:calc(100svh - 84px);overflow:auto}
   .nav.is-open{transform:none;opacity:1;pointer-events:auto}
   .nav a{padding:14px 0;border-bottom:1px solid var(--line-soft);font-size:17px}
   .nav .tel-btn{justify-content:center;margin-top:16px;padding:14px;font-size:16px;border-bottom:0}
@@ -265,6 +265,24 @@ h3{font-size:clamp(19px,2vw,23px);letter-spacing:-.02em}
 @media (max-width:900px){.devices{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){.devices{grid-template-columns:repeat(2,1fr)}}
 
+/* ——— pas marek: przesuwa się w pętli, przystaje pod kursorem ——— */
+.marks{padding:clamp(30px,4vw,46px) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden}
+.marks-lab{display:block;text-align:center;font-family:var(--m);font-size:12px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-3);margin-bottom:clamp(20px,2.4vw,28px)}
+.marks-view{overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.marks-track{display:flex;align-items:center;gap:clamp(52px,7vw,120px);width:max-content;
+  animation:przesuw-marek 38s linear infinite}
+.marks-track span{font-family:var(--h);font-weight:700;font-size:clamp(22px,2.7vw,36px);
+  letter-spacing:-.025em;color:#7c868c;white-space:nowrap;transition:color .3s}
+.marks-track span:hover{color:var(--ink)}
+.marks:hover .marks-track{animation-play-state:paused}
+@keyframes przesuw-marek{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){
+  .marks-track{animation:none;justify-content:center;width:100%;flex-wrap:wrap;gap:40px}
+}
+
 /* ——— galeria ——— */
 .bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;gap:12px;margin-top:44px}
 .bento figure{margin:0;overflow:hidden;border-radius:var(--r);background:#dedad3;position:relative}
@@ -360,7 +378,7 @@ textarea{min-height:130px;resize:vertical}
 /* ——— stopka ——— */
 .foot{background:var(--navy-2);color:rgba(255,255,255,.78);padding:clamp(46px,6vw,74px) 0 26px;font-size:15px}
 .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:clamp(26px,4vw,54px)}
-.foot img.logo{height:34px;width:auto;margin-bottom:16px}
+.foot img.logo{height:44px;width:auto;margin-bottom:18px}
 .foot h4{font-family:var(--m);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:500;margin:0 0 15px}
 .foot ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
 .foot a{color:rgba(255,255,255,.82);text-decoration:none;transition:color .2s}
