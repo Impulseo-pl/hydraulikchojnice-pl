@@ -276,7 +276,7 @@ def index_body():
     # układ musi domykać się do pełnych rzędów po 4 kolumny, inaczej zostaje dziura
     marki = "\n".join(
         f'        <img src="{src}" alt="{nazwa}" style="height:{h}px" loading="lazy" decoding="async">'
-        for src, nazwa, h in MARKI * 2)
+        for src, nazwa, h in MARKI * 10)
 
     bento = [
         ("zasobnik-02", "b-tall"), ("wod-kan-05", "b-wide"), ("rozdzielacz-02", ""),
@@ -408,10 +408,10 @@ def index_body():
     </div>
 
     <figure class="mapa rv">
-      <img src="img/mapa-obszaru.svg" width="1200" height="820" loading="lazy" decoding="async"
-        alt="Mapa obszaru pracy: Chojnice w środku, wokół Człuchów, Kamień Krajeński, Sępólno Krajeńskie i Tuchola, całość w promieniu 100 kilometrów">
-      <figcaption>Kółka co 25 km. Czerwone punkty to miejscowości, w których pracujemy najczęściej,
-        szare pokazują, jak daleko sięga sto kilometrów od Chojnic.</figcaption>
+      <iframe title="Mapa: Chojnice i okolice" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://maps.google.com/maps?q=Chojnice&amp;z=9&amp;output=embed&amp;hl=pl"
+        style="border:0" allowfullscreen></iframe>
+      <figcaption>Chojnice i okolica. Przy większych zleceniach dojeżdżamy w promieniu 100 km.</figcaption>
     </figure>
   </div>
 </section>
@@ -801,7 +801,11 @@ POLITYKA = """<section class="sec">
     <p>Formularz kontaktowy obsługuje serwis <strong>FormSubmit</strong>, który przekazuje treść wiadomości
       na naszą skrzynkę pocztową. Serwis ma serwery w Stanach Zjednoczonych, więc dane z formularza są
       przesyłane poza Europejski Obszar Gospodarczy. Poczta prowadzona jest w usłudze Gmail
-      (Google Ireland Limited). Strona hostowana jest w usłudze GitHub Pages.
+      (Google Ireland Limited). Strona hostowana jest w usłudze GitHub Pages.</p>
+    <p>Na stronie głównej osadzona jest <strong>mapa Google Maps</strong> (Google Ireland Limited).
+      Jej wyświetlenie oznacza połączenie z serwerami Google, które mogą zapisać w przeglądarce
+      pliki cookies i odczytać adres IP. Jeśli chcecie tego uniknąć, wystarczy nie otwierać strony
+      głównej albo zablokować pliki cookies w ustawieniach przeglądarki.
       Jeśli chcecie tego uniknąć, wystarczy zadzwonić zamiast wypełniać formularz.</p>
 
     <h2>Wasze prawa</h2>
@@ -816,8 +820,8 @@ POLITYKA = """<section class="sec">
       <a href="mailto:stryszykirek@gmail.com">stryszykirek@gmail.com</a> albo zadzwonić.</p>
 
     <h2>Ciasteczka i statystyki</h2>
-    <p>Strona nie używa ciasteczek reklamowych ani narzędzi śledzących. Nie mamy tu Google Analytics,
-      piksela Facebooka ani osadzonej mapy Google. Kroje pisma trzymamy na własnym serwerze, więc przeglądarka
+    <p>Strona nie używa ciasteczek reklamowych ani narzędzi śledzących. Nie mamy tu Google Analytics
+      ani piksela Facebooka. Kroje pisma trzymamy na własnym serwerze, więc przeglądarka
       nie łączy się w tle z serwerami zewnętrznymi.</p>
 
     <h2>Zmiany dokumentu</h2>

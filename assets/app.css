@@ -288,12 +288,10 @@ h3{font-size:clamp(21px,2.2vw,26px);letter-spacing:-.005em}
 .marks-view{overflow:hidden;
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
   mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
-.marks-track{display:flex;align-items:center;gap:clamp(52px,7vw,120px);width:max-content;
-  animation:przesuw-marek 38s linear infinite}
-.marks-track img{width:auto;flex:0 0 auto;
-  /* jeden ton zamiast czterech różnych kolorów firmowych; barwa wraca pod kursorem */
-  filter:grayscale(1) opacity(.62);transition:filter .35s}
-.marks-track img:hover{filter:grayscale(0) opacity(1)}
+.marks-track{display:flex;align-items:center;gap:clamp(52px,7vw,110px);width:max-content;
+  animation:przesuw-marek 46s linear infinite;will-change:transform}
+.marks-track img{width:auto;flex:0 0 auto;filter:opacity(.92);transition:filter .3s,transform .3s}
+.marks-track img:hover{filter:opacity(1);transform:translateY(-2px)}
 .marks:hover .marks-track{animation-play-state:paused}
 @keyframes przesuw-marek{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){
@@ -350,6 +348,7 @@ h3{font-size:clamp(21px,2.2vw,26px);letter-spacing:-.005em}
 /* ——— mapa obszaru ——— */
 .mapa{margin:clamp(34px,4.5vw,56px) 0 0;padding:0}
 .mapa img{width:100%;height:auto;border-radius:var(--r);border:1px solid var(--line);background:#f4f1ec}
+.mapa iframe{width:100%;height:clamp(320px,46vw,520px);border-radius:var(--r);border:1px solid var(--line);display:block}
 .mapa figcaption{margin-top:14px;font-size:14.5px;color:var(--ink-3);max-width:70ch}
 
 /* ——— faq ——— */
