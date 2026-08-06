@@ -31,15 +31,22 @@ KAFELKI = [
 ]
 
 PROCES = [
-    ("01", "Telefon", "Opisują Państwo zakres prac w swoim domu, a my wspólnie ustalamy termin spotkania na miejscu."),
+    ("01", "Telefon", "Opisujecie zakres prac u siebie, a my wspólnie ustalamy termin spotkania na miejscu."),
     ("02", "Wycena", "Cena ustalona na podstawie wyceny jest ceną ostateczną, bez ukrytych kosztów."),
     ("03", "Wykonanie", "Wykonujemy instalacje według wcześniejszych ustaleń, uruchamiamy, konfigurujemy, regulujemy, "
                         "tłumaczymy zasadę działania oraz uczymy użytkowania instalacji."),
-    ("04", "Odbiór i gwarancja", "Na wykonaną instalację otrzymują Państwo gwarancję, protokoły z prób szczelności "
+    ("04", "Odbiór i gwarancja", "Na wykonaną instalację dostajecie gwarancję, protokoły z prób szczelności "
                                  "oraz stały kontakt z nami w razie problemów."),
 ]
 
-MARKI = ["Vaillant", "Viessmann", "Afriso", "Salus"]
+# logotypy producentów, na których sprzęcie pracują; wysokości dobrane optycznie,
+# bo każdy znak ma inne proporcje
+MARKI = [
+    ("img/marki/vaillant.svg", "Vaillant", 30),
+    ("img/marki/viessmann.svg", "Viessmann", 25),
+    ("img/marki/afriso.svg", "Afriso", 29),
+    ("img/marki/salus.webp", "Salus Controls", 23),
+]
 
 MIASTA = ["Chojnice", "Sępólno Krajeńskie", "Kamień Krajeński", "Tuchola", "Człuchów"]
 
@@ -102,8 +109,8 @@ def hero_block():
     <p class="kicker">Chojnice i okolice, 100 km</p>
     <h1>Instalacje C.O, <span class="nw">wodno-kanalizacyjne,</span> gazowe, ogrzewania podłogowego</h1>
     <p class="hero-lead">Dwadzieścia lat pracy przy instalacjach, od domu w budowie po remont łazienki.
-      Robimy od pierwszej rury po rozruch i przeszkolenie, w umówionym terminie i za cenę, którą znają Państwo
-      przed rozpoczęciem prac.</p>
+      Robimy od pierwszej rury po rozruch i przeszkolenie, w umówionym terminie i za cenę, którą znacie przed
+      rozpoczęciem prac.</p>
     <div class="hero-cta">
       <a class="btn btn-1" href="tel:{TEL_E164}">Zadzwoń <span class="num">{TEL}</span></a>
       <a class="btn btn-2" href="kontakt.html">Bezpłatna wycena</a>
@@ -239,7 +246,9 @@ def index_body():
         for q, a in FAQ)
 
     # układ musi domykać się do pełnych rzędów po 4 kolumny, inaczej zostaje dziura
-    marki = "\n".join(f'        <span>{m}</span>' for m in MARKI * 2)
+    marki = "\n".join(
+        f'        <img src="{src}" alt="{nazwa}" style="height:{h}px" loading="lazy" decoding="async">'
+        for src, nazwa, h in MARKI * 2)
 
     bento = [
         ("zasobnik-02", "b-tall"), ("wod-kan-05", "b-wide"), ("rozdzielacz-02", ""),
@@ -255,10 +264,10 @@ def index_body():
   <div class="wrap">
     <div class="head rv">
       <p class="kicker">Czym się zajmujemy</p>
-      <h2>Cztery zakresy, w których pracujemy najczęściej</h2>
+      <h2>Co robimy najczęściej</h2>
       <p class="lead">Instalacje C.O, wodno-kanalizacyjne, gazowe i ogrzewania podłogowego to dla nas codzienność.
-        Jeśli szukają Państwo fachowego doradztwa, wykonania od A do Z i wyceny, po której wiadomo, ile instalacja
-        będzie kosztować, są Państwo w odpowiednim miejscu.</p>
+        Jeśli szukacie fachowego doradztwa, wykonania od A do Z i wyceny, po której wiadomo, ile instalacja
+        będzie kosztować, jesteście w dobrym miejscu.</p>
     </div>
     <div class="tiles rv">
 {kafelki}
@@ -271,7 +280,7 @@ def index_body():
     <div class="head rv">
       <p class="kicker">Jak pracujemy</p>
       <h2>Prosty, przewidywalny proces</h2>
-      <p class="lead">Cztery kroki od telefonu do odbioru. Na każdym z nich wiedzą Państwo, co się dzieje i ile to kosztuje.</p>
+      <p class="lead">Cztery kroki od telefonu do odbioru. Na każdym wiecie, co się dzieje i ile to kosztuje.</p>
     </div>
     <div class="steps rv">
 {kroki}
@@ -284,10 +293,10 @@ def index_body():
     <div class="hidden-layer">
       <div class="rv">
         <p class="kicker">Dlaczego to ważne</p>
-        <h2>Najważniejsze zostaje pod jastrychem</h2>
+        <h2>Najważniejsze znika pod wylewką</h2>
         <p class="lead">Rury w posadzce i w bruzdach ścian znikają na kilkanaście lat. Poprawka po odbiorze
           oznacza skucie wylewki, więc pracujemy tak, żeby żadna poprawka nie była potrzebna. Instalację
-          sprawdzamy pod ciśnieniem, zanim przyjedzie ekipa od jastrychu, a Państwo dostają dokumenty z tej próby.</p>
+          sprawdzamy pod ciśnieniem, zanim przyjedzie ekipa od jastrychu, a wy dostajecie z niej dokumenty.</p>
         <ul class="facts">
           <li><span class="lab">Próby</span><span class="val">Protokoły z prób szczelności przekazujemy przy odbiorze</span></li>
           <li><span class="lab">Rozruch</span><span class="val">Uruchomienie, konfiguracja i regulacja instalacji</span></li>
@@ -312,7 +321,7 @@ def index_body():
     <div class="head rv">
       <p class="kicker">Oferta</p>
       <h2>Od fundamentów po efekt finalny inwestycji</h2>
-      <p class="lead">Zakres usług, jakie oferujemy, znajdą Państwo poniżej.</p>
+      <p class="lead">Zakres usług, które wykonujemy, znajdziecie poniżej.</p>
     </div>
     <div class="offer rv">
 {oferta}
@@ -325,9 +334,11 @@ def index_body():
     <div class="partner">
       <div class="rv">
         <p class="kicker">Partner</p>
-        <h2>Autoryzowany montaż i serwis Vaillant</h2>
-        <p class="lead">Montujemy i serwisujemy kotły gazowe oraz pompy ciepła Vaillant. Prowadzimy również
-          sprzedaż obu typów urządzeń, więc nie muszą Państwo szukać sprzętu na własną rękę.</p>
+        <img src="img/marki/vaillant.svg" width="210" height="53" alt="Logo Vaillant"
+          style="height:44px;width:auto;margin:18px 0 6px" loading="lazy" decoding="async">
+        <h2>Autoryzowany montaż i serwis</h2>
+        <p class="lead">Montujemy i serwisujemy kotły gazowe oraz pompy ciepła Vaillant. Prowadzimy też
+          sprzedaż obu typów urządzeń, więc nie musicie szukać sprzętu na własną rękę.</p>
         <ul class="checks">
           <li>Montaż oraz serwis kotłów gazowych Vaillant</li>
           <li>Montaż pomp ciepła Vaillant</li>
@@ -376,9 +387,9 @@ def index_body():
     <div class="area">
       <div class="rv">
         <p class="kicker">Obszar działania</p>
-        <h2>Dojeżdżamy do Państwa</h2>
+        <h2>Dojeżdżamy do was</h2>
         <p class="lead">Pracujemy w Chojnicach i okolicy, a przy większych inwestycjach dojeżdżamy w promieniu
-          100 km. Nie wiedzą Państwo, czy dojedziemy? Wystarczy jeden telefon.</p>
+          100 km. Nie wiecie, czy dojedziemy? Wystarczy jeden telefon.</p>
         <div class="towns">
 {miasta}
           <span class="plus">+ 100 km</span>
@@ -390,14 +401,21 @@ def index_body():
         </figure>
       </div>
     </div>
+
+    <figure class="mapa rv">
+      <img src="img/mapa-obszaru.svg" width="1200" height="820" loading="lazy" decoding="async"
+        alt="Mapa obszaru pracy: Chojnice w środku, wokół Człuchów, Kamień Krajeński, Sępólno Krajeńskie i Tuchola, całość w promieniu 100 kilometrów">
+      <figcaption>Kółka co 25 km. Czerwone punkty to miejscowości, w których pracujemy najczęściej,
+        szare pokazują, jak daleko sięga sto kilometrów od Chojnic.</figcaption>
+    </figure>
   </div>
 </section>
 
 <section class="sec">
   <div class="wrap">
     <div class="head rv">
-      <p class="kicker">Częste pytania</p>
-      <h2>Dobrze wiedzieć przed rozmową</h2>
+      <p class="kicker">Zanim zadzwonicie</p>
+      <h2>Częste pytania</h2>
     </div>
     <div class="faq rv">
 {faq}
@@ -405,7 +423,7 @@ def index_body():
   </div>
 </section>
 
-{cta_block("Planują Państwo instalację? Wycenimy ją za darmo.",
+{cta_block("Planujecie instalację? Wycenimy ją za darmo.",
            "Wystarczy telefon albo wiadomość. Przyjedziemy, obejrzymy zakres prac i podamy ostateczną cenę.")}
 """
 
@@ -454,7 +472,7 @@ def oferta_body():
                      ("podlogowka-08", ""), ("zasobnik-03", ""), ("wod-kan-02", "b-wide")])
 
     return f"""{strona_head("Oferta", "Od fundamentów po efekt finalny inwestycji",
-                            "Zakres usług, jakie oferujemy, znajdą Państwo poniżej. Wycena zakresu jest bezpłatna, "
+                            "Zakres usług, które wykonujemy, znajdziecie poniżej. Wycena zakresu jest bezpłatna, "
                             "a cena ustalona po obejrzeniu miejsca jest ceną ostateczną.", "wod-kan-05")}
 
 <section class="sec" style="padding-top:0">
@@ -469,7 +487,7 @@ def oferta_body():
   <div class="wrap">
     <div class="head rv">
       <p class="kicker">Z naszych budów</p>
-      <h2>Tak wygląda robota w trakcie</h2>
+      <h2>Robota w trakcie</h2>
       <p class="lead">Kilka kadrów z etapu, którego zwykle nikt nie ogląda, bo zaraz potem znika pod tynkiem i wylewką.</p>
     </div>
     <div class="bento rv">
@@ -478,7 +496,7 @@ def oferta_body():
   </div>
 </section>
 
-{cta_block("Mają Państwo listę prac do wyceny?",
+{cta_block("Macie listę prac do wyceny?",
            "Wystarczy telefon i krótki opis zakresu. Umówimy oględziny i podamy cenę, która się później nie zmieni.")}
 """
 
@@ -507,7 +525,7 @@ def realizacje_body():
   </div>
 </section>
 
-{cta_block("Chcą Państwo podobną instalację u siebie?",
+{cta_block("Chcecie podobną instalację u siebie?",
            "Wystarczy jeden telefon i informacja, na jakim etapie jest budowa. Przyjedziemy obejrzeć zakres prac.")}
 """
 
@@ -552,7 +570,7 @@ def partner_body():
     <div class="partner">
       <div class="rv">
         <div class="partner-logo">
-          <img src="img/vaillant-logo.webp" width="220" height="58" alt="Logo Vaillant" loading="lazy" decoding="async">
+          <img src="img/marki/vaillant.svg" width="300" height="76" alt="Logo Vaillant" loading="lazy" decoding="async">
         </div>
         <ul class="checks" style="margin-top:28px">
           <li>Montaż oraz serwis kotłów gazowych Vaillant</li>
@@ -562,8 +580,8 @@ def partner_body():
       </div>
       <div class="rv">
         <p class="lead" style="margin-top:0">Autoryzacja oznacza, że urządzenie montuje ktoś przeszkolony przez producenta,
-          a gwarancja zostaje utrzymana. Kupują Państwo sprzęt u nas albo we własnym zakresie, a my zajmujemy się
-          montażem, rozruchem i późniejszymi przeglądami.</p>
+          a gwarancja zostaje utrzymana. Sprzęt kupujecie u nas albo we własnym zakresie, a my zajmujemy się montażem,
+          rozruchem i późniejszymi przeglądami.</p>
         <ul class="facts">
           <li><span class="lab">Montaż</span><span class="val">Kotły gazowe i pompy ciepła, z rozruchem i konfiguracją</span></li>
           <li><span class="lab">Serwis</span><span class="val">Przeglądy okresowe i naprawy urządzeń Vaillant</span></li>
@@ -602,8 +620,8 @@ def partner_body():
   </div>
 </section>
 
-{cta_block("Planują Państwo kocioł albo pompę ciepła?",
-           "Podpowiemy, co ma sens przy Państwa domu i instalacji, i podamy cenę razem z montażem.")}
+{cta_block("Planujecie kocioł albo pompę ciepła?",
+           "Podpowiemy, co ma sens przy waszym domu i instalacji, i podamy cenę razem z montażem.")}
 """
 
 
@@ -618,12 +636,12 @@ def o_nas_body():
   <div class="wrap">
     <div class="hidden-layer">
       <div class="rv">
-        <h2>Ta sama ekipa od pierwszej rury do odbioru</h2>
+        <h2>Dwóch ludzi, jedna ekipa</h2>
         <p class="lead">Instalacje C.O, wodno-kanalizacyjne, gazowe i ogrzewania podłogowego to dla nas codzienność.
-          Jeśli oczekują Państwo fachowego doradztwa w tych sprawach, wykonania od A do Z, wykonania w ustalonym
-          terminie oraz wyceny, po której wiadomo, ile instalacja będzie kosztować, są Państwo w odpowiednim miejscu.</p>
-        <p class="lead">Pracujemy we dwóch, Ireneusz i Patryk. To znaczy, że na budowie są Państwo cały czas z tymi
-          samymi ludźmi, a osoba, która wycenia, jest tą samą, która potem kładzie rury i podłącza kocioł.
+          Jeśli szukacie fachowego doradztwa w tych sprawach, wykonania od A do Z, w ustalonym terminie,
+          i wyceny, po której wiadomo, ile instalacja będzie kosztować, jesteście w dobrym miejscu.</p>
+        <p class="lead">Pracujemy we dwóch, Ireneusz i Patryk. To znaczy, że na budowie macie cały czas tych
+          samych ludzi, a osoba, która wycenia, jest tą samą, która potem kładzie rury i podłącza kocioł.
           Patryk ma autoryzację Vaillant na montaż i serwis kotłów gazowych oraz pomp ciepła.</p>
       </div>
       <div class="hl-frames rv">
@@ -642,7 +660,7 @@ def o_nas_body():
   <div class="wrap">
     <div class="head rv">
       <p class="kicker">Zasady, przy których zostajemy</p>
-      <h2>Cztery rzeczy, które są u nas stałe</h2>
+      <h2>Cztery rzeczy bez zmian</h2>
     </div>
     <ul class="facts rv" style="margin-top:34px;max-width:96ch">
       <li><span class="lab">Wycena</span><span class="val">Przyjazd i wycena są bezpłatne. Cena po oględzinach jest ceną ostateczną.</span></li>
@@ -676,15 +694,15 @@ def o_nas_body():
   </div>
 </section>
 
-{cta_block("Budują Państwo dom albo remontują łazienkę?",
-           "Wystarczy telefon. Umówimy oględziny, a wycenę dostaną Państwo bez żadnych zobowiązań.")}
+{cta_block("Budujecie dom albo remontujecie łazienkę?",
+           "Wystarczy telefon. Umówimy oględziny, a wycenę dostajecie bez żadnych zobowiązań.")}
 """
 
 
 # ─────────────────────────── kontakt ───────────────────────────
 
 def kontakt_body():
-    return f"""{strona_head("Kontakt", "Porozmawiajmy o Państwa instalacji",
+    return f"""{strona_head("Kontakt", "Porozmawiajmy o waszej instalacji",
                             "Najszybciej jest zadzwonić. Można też zostawić wiadomość przez formularz, "
                             "wtedy oddzwonimy, gdy zejdziemy z budowy.", "wod-kan-07")}
 
@@ -696,7 +714,7 @@ def kontakt_body():
           <div class="card">
             <span class="lab">Telefon</span>
             <a class="val" href="tel:{TEL_E164}">{TEL}</a>
-            <p class="sub">Jeśli nie odbieramy, jesteśmy przy pracy. Proszę spróbować za chwilę albo napisać.</p>
+            <p class="sub">Jeśli nie odbieramy, jesteśmy przy pracy. Spróbujcie za chwilę albo napiszcie.</p>
           </div>
           <div class="card">
             <span class="lab">E-mail</span>
@@ -718,14 +736,14 @@ def kontakt_body():
 
       <div class="rv">
         <h2 style="font-size:clamp(22px,2.6vw,30px)">Zamów bezpłatną wycenę</h2>
-        <p class="lead" style="margin-bottom:26px">Proszę napisać, co jest do zrobienia i na jakim etapie jest budowa.
+        <p class="lead" style="margin-bottom:26px">Napiszcie, co jest do zrobienia i na jakim etapie jest budowa.
           Odezwiemy się i umówimy oględziny.</p>
         <form data-form action="https://formsubmit.co/{MAIL}" method="POST">
           <input type="hidden" name="_subject" value="Zapytanie ze strony hydraulikchojnice.pl">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_next" value="{SITE}/dziekujemy.html">
           <input type="hidden" name="_captcha" value="false">
-          <div class="hp"><label for="_honey">Proszę zostawić puste</label>
+          <div class="hp"><label for="_honey">Zostaw puste</label>
             <input id="_honey" type="text" name="_honey" tabindex="-1" autocomplete="off"></div>
           <div class="form-grid">
             <div class="field full">
@@ -762,7 +780,7 @@ def kontakt_body():
 <section class="sec sec-paper">
   <div class="wrap">
     <div class="head rv">
-      <p class="kicker">Zanim Państwo zadzwonią</p>
+      <p class="kicker">Zanim zadzwonicie</p>
       <h2>Najczęstsze pytania</h2>
     </div>
     <div class="faq rv">
@@ -791,7 +809,7 @@ POLITYKA = """<section class="sec">
     <h2>Jakie dane zbieramy</h2>
     <ul>
       <li>Dane z formularza kontaktowego: imię i nazwisko, telefon lub e-mail oraz treść wiadomości.</li>
-      <li>Dane, które przekazują Państwo w rozmowie telefonicznej lub mailowej, gdy ustalamy zakres prac.</li>
+      <li>Dane przekazane w rozmowie telefonicznej lub mailowej, gdy ustalamy zakres prac.</li>
       <li>Podstawowe dane techniczne zapisywane przez serwer, na którym stoi strona (adres IP, data zapytania).</li>
     </ul>
 
@@ -813,9 +831,9 @@ POLITYKA = """<section class="sec">
       na naszą skrzynkę pocztową. Serwis ma serwery w Stanach Zjednoczonych, więc dane z formularza są
       przesyłane poza Europejski Obszar Gospodarczy. Poczta prowadzona jest w usłudze Gmail
       (Google Ireland Limited). Strona hostowana jest w usłudze GitHub Pages.
-      Jeśli wolą Państwo tego uniknąć, wystarczy zadzwonić zamiast wypełniać formularz.</p>
+      Jeśli chcecie tego uniknąć, wystarczy zadzwonić zamiast wypełniać formularz.</p>
 
-    <h2>Państwa prawa</h2>
+    <h2>Wasze prawa</h2>
     <ul>
       <li>Dostęp do swoich danych i otrzymanie ich kopii.</li>
       <li>Sprostowanie danych, które są nieprawidłowe.</li>
@@ -842,7 +860,7 @@ DZIEKUJEMY = """<section class="sec mid">
     <p class="kicker" style="justify-content:center">Wiadomość wysłana</p>
     <h1 style="margin-top:18px">Dziękujemy, odezwiemy się</h1>
     <p class="lead" style="margin-inline:auto">Zapytanie do nas dotarło. Zwykle odpowiadamy tego samego albo
-      następnego dnia roboczego, po zejściu z budowy. Jeśli sprawa jest pilna, prosimy dzwonić.</p>
+      następnego dnia roboczego, po zejściu z budowy. Jeśli sprawa jest pilna, dzwońcie.</p>
     <div class="row">
       <a class="btn btn-1" href="tel:+48883602422">Zadzwoń <span class="num">+48 883 602 422</span></a>
       <a class="btn btn-3" href="index.html">Wróć na stronę główną</a>

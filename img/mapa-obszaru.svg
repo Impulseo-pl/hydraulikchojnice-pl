@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" role="img"
+     aria-label="Mapa obszaru pracy: Chojnice i okoliczne miejscowości w promieniu 100 kilometrów">
+  <rect width="1200" height="820" fill="#f4f1ec"/>
+  <circle cx="600.0" cy="410.0" r="334.0" fill="#132f49" fill-opacity="0.03"/>
+  <circle cx="600.0" cy="410.0" r="83.5" fill="none" stroke="#c9c3b8" stroke-width="1" stroke-dasharray="3 8"/>
+  <circle cx="600.0" cy="410.0" r="167.0" fill="none" stroke="#c9c3b8" stroke-width="1" stroke-dasharray="3 8"/>
+  <circle cx="600.0" cy="410.0" r="250.5" fill="none" stroke="#c9c3b8" stroke-width="1" stroke-dasharray="3 8"/>
+  <circle cx="600.0" cy="410.0" r="334.0" fill="none" stroke="#c9c3b8" stroke-width="1.6"/>
+  <text x="606.0" y="342.5" font-family="monospace" font-size="14" fill="#a6ada2">25 km</text>
+  <text x="606.0" y="259.0" font-family="monospace" font-size="14" fill="#a6ada2">50 km</text>
+  <text x="606.0" y="175.5" font-family="monospace" font-size="14" fill="#a6ada2">75 km</text>
+  <text x="606.0" y="92.0" font-family="monospace" font-size="14" fill="#a6ada2">100 km</text>
+  <circle cx="556.4" cy="422.0" r="6.5" fill="#8e2434"/>
+  <line x1="556.4" y1="422.0" x2="535.2" y2="427.9" stroke="#8e2434" stroke-width="1.2" stroke-opacity=".5"/>
+  <text x="527.5" y="437.0" font-family="Inter,sans-serif" font-size="21" font-weight="600" fill="#14181b" text-anchor="end">Człuchów</text>
+  <circle cx="589.9" cy="471.7" r="6.5" fill="#8e2434"/>
+  <line x1="589.9" y1="471.7" x2="586.4" y2="493.4" stroke="#8e2434" stroke-width="1.2" stroke-opacity=".5"/>
+  <text x="559.1" y="517.3" font-family="Inter,sans-serif" font-size="21" font-weight="600" fill="#14181b" text-anchor="end">Kamień Krajeński</text>
+  <circle cx="594.5" cy="499.3" r="6.5" fill="#8e2434"/>
+  <line x1="594.5" y1="499.3" x2="593.2" y2="521.2" stroke="#8e2434" stroke-width="1.2" stroke-opacity=".5"/>
+  <text x="622.7" y="565.2" font-family="Inter,sans-serif" font-size="21" font-weight="600" fill="#14181b" text-anchor="start">Sępólno Krajeńskie</text>
+  <circle cx="665.7" cy="450.3" r="6.5" fill="#8e2434"/>
+  <line x1="665.7" y1="450.3" x2="684.4" y2="461.8" stroke="#8e2434" stroke-width="1.2" stroke-opacity=".5"/>
+  <text x="691.3" y="473.0" font-family="Inter,sans-serif" font-size="21" font-weight="600" fill="#14181b" text-anchor="start">Tuchola</text>
+  <circle cx="585.5" cy="234.0" r="4" fill="#a6ada2"/>
+  <text x="585.5" y="222.0" font-family="Inter,sans-serif" font-size="16" fill="#7b848a" text-anchor="middle">Bytów</text>
+  <circle cx="813.9" cy="309.5" r="4" fill="#a6ada2"/>
+  <text x="813.9" y="297.5" font-family="Inter,sans-serif" font-size="16" fill="#7b848a" text-anchor="middle">Starogard Gdański</text>
+  <circle cx="419.9" cy="612.1" r="4" fill="#a6ada2"/>
+  <text x="419.9" y="600.1" font-family="Inter,sans-serif" font-size="16" fill="#7b848a" text-anchor="middle">Piła</text>
+  <circle cx="699.2" cy="622.5" r="4" fill="#a6ada2"/>
+  <text x="699.2" y="610.5" font-family="Inter,sans-serif" font-size="16" fill="#7b848a" text-anchor="middle">Bydgoszcz</text>
+  <circle cx="839.5" cy="166.3" r="4" fill="#a6ada2"/>
+  <text x="839.5" y="154.3" font-family="Inter,sans-serif" font-size="16" fill="#7b848a" text-anchor="middle">Gdańsk</text>
+  <circle cx="483.8" cy="124.6" r="4" fill="#a6ada2"/>
+  <text x="483.8" y="112.6" font-family="Inter,sans-serif" font-size="16" fill="#7b848a" text-anchor="middle">Słupsk</text>
+  <circle cx="600.0" cy="410.0" r="11" fill="#132f49"/>
+  <circle cx="600.0" cy="410.0" r="20" fill="none" stroke="#132f49" stroke-width="2" stroke-opacity=".3"/>
+  <text x="600.0" y="380.0" font-family="Inter,sans-serif" font-size="25" font-weight="700" fill="#132f49" text-anchor="middle">Chojnice</text>
+</svg>

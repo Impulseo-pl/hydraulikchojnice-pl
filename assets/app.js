@@ -19,11 +19,20 @@
     });
   }
 
-  /* cień nagłówka po przewinięciu */
+  /* nagłówek: chowa się przy przewijaniu w dół, wraca przy przewijaniu w górę */
   var top = document.querySelector('.top');
   if (top) {
+    var ostatniY = window.scrollY;
     var onScroll = function () {
-      top.classList.toggle('is-stuck', window.scrollY > 8);
+      var y = window.scrollY;
+      top.classList.toggle('is-stuck', y > 8);
+      var menuOtwarte = nav && nav.classList.contains('is-open');
+      if (!menuOtwarte) {
+        /* chowamy dopiero poniżej pierwszego ekranu, żeby nie migało przy górze strony */
+        if (y > 260 && y > ostatniY + 6) top.classList.add('is-hidden');
+        else if (y < ostatniY - 6 || y < 120) top.classList.remove('is-hidden');
+      }
+      ostatniY = y;
     };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });

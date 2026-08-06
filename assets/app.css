@@ -1,11 +1,23 @@
 /* Usługi Hydrauliczne Ireneusz Stryszyk — Chojnice
    Arkusz stylów strony. Fonty trzymamy u siebie (assets/fonts). */
 
-@font-face{font-family:'Bricolage';font-style:normal;font-weight:400 800;font-stretch:75% 100%;font-display:swap;
-  src:url(fonts/bricolage-latin-ext.woff2) format('woff2');
+@font-face{font-family:'Naglowek';font-style:normal;font-weight:500;font-display:swap;
+  src:url(fonts/barlow-500-latin-ext.woff2) format('woff2');
   unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
-@font-face{font-family:'Bricolage';font-style:normal;font-weight:400 800;font-stretch:75% 100%;font-display:swap;
-  src:url(fonts/bricolage-latin.woff2) format('woff2');
+@font-face{font-family:'Naglowek';font-style:normal;font-weight:500;font-display:swap;
+  src:url(fonts/barlow-500-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Naglowek';font-style:normal;font-weight:600;font-display:swap;
+  src:url(fonts/barlow-600-latin-ext.woff2) format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Naglowek';font-style:normal;font-weight:600;font-display:swap;
+  src:url(fonts/barlow-600-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Naglowek';font-style:normal;font-weight:700;font-display:swap;
+  src:url(fonts/barlow-700-latin-ext.woff2) format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Naglowek';font-style:normal;font-weight:700;font-display:swap;
+  src:url(fonts/barlow-700-latin.woff2) format('woff2');
   unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
 @font-face{font-family:'InterVar';font-style:normal;font-weight:400 600;font-display:swap;
   src:url(fonts/inter-latin-ext.woff2) format('woff2');
@@ -33,7 +45,7 @@
   --accent-dark:#71182a;
   --line:rgba(20,24,27,.13);
   --line-soft:rgba(20,24,27,.07);
-  --h:'Bricolage',system-ui,sans-serif;
+  --h:'Naglowek','Arial Narrow',system-ui,sans-serif;
   --b:'InterVar',system-ui,-apple-system,sans-serif;
   --m:'PlexMono',ui-monospace,monospace;
   --wrap:1240px;
@@ -53,7 +65,7 @@ body{
 }
 img{max-width:100%;height:auto;display:block}
 a{color:inherit}
-h1,h2,h3,h4{font-family:var(--h);font-weight:700;letter-spacing:-.021em;line-height:1.08;margin:0}
+h1,h2,h3,h4{font-family:var(--h);font-weight:600;letter-spacing:-.005em;line-height:1.06;margin:0}
 /* wyraz złożony (wodno-kanalizacyjne) ma przechodzić do nowej linii w całości */
 .nw{white-space:nowrap}
 p{margin:0}
@@ -66,8 +78,9 @@ p{margin:0}
 .skip:focus{left:12px;top:12px}
 
 /* ——— nagłówek ——— */
-.top{position:sticky;top:0;z-index:90;background:rgba(251,250,248,.92);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line-soft);transition:box-shadow .25s}
+.top{position:sticky;top:0;z-index:90;transition:transform .35s cubic-bezier(.2,.7,.3,1),box-shadow .25s;background:rgba(251,250,248,.92);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line-soft);transition:box-shadow .25s}
 .top.is-stuck{box-shadow:0 10px 30px -24px rgba(10,20,30,.5)}
+.top.is-hidden{transform:translateY(-102%)}
 .top-in{display:flex;align-items:center;gap:22px;min-height:84px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex:0 0 auto}
 .brand img{width:auto;height:46px}
@@ -97,7 +110,7 @@ p{margin:0}
 }
 
 /* strona z pełnoekranowym hero: nagłówek leży na zdjęciu, po przewinięciu wraca jasny pasek */
-body.hero-page .top{position:fixed;left:0;right:0;top:0;background:transparent;backdrop-filter:none;border-bottom-color:transparent}
+body.hero-page .top{position:fixed;left:0;right:0;top:0;transition:transform .35s cubic-bezier(.2,.7,.3,1),background .3s;background:transparent;backdrop-filter:none;border-bottom-color:transparent}
 body.hero-page .top .nav a{color:rgba(255,255,255,.88)}
 body.hero-page .top .nav a:hover{color:#fff}
 body.hero-page .top .tel-btn{color:#fff!important}
@@ -134,7 +147,7 @@ body.hero-page .top.is-stuck .brand .logo-dark{display:block}
 .kicker{font-family:var(--m);font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);display:flex;align-items:center;gap:12px}
 .hero .kicker,.sec-dark .kicker,.cta .kicker{color:rgba(255,255,255,.82)}
 .kicker::before{content:"";width:34px;height:1.5px;background:var(--accent);display:block}
-.hero h1{font-size:clamp(31px,5.4vw,63px);max-width:16ch;margin:20px 0 0;font-weight:700;letter-spacing:-.028em;text-wrap:balance}
+.hero h1{font-size:clamp(34px,6vw,72px);max-width:18ch;margin:20px 0 0;font-weight:600;letter-spacing:-.008em;text-wrap:balance}
 .hero h1 em{font-style:normal;color:#ffd9de}
 .hero-lead{margin-top:20px;max-width:56ch;font-size:clamp(16px,1.55vw,19px);color:rgba(255,255,255,.9)}
 .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
@@ -175,8 +188,8 @@ section{position:relative}
 .sec-dark .lead,.sec-dark .muted{color:rgba(255,255,255,.78)}
 .head{max-width:62ch}
 .sec-dark .head .kicker{color:rgba(255,255,255,.78)}
-h2{font-size:clamp(27px,3.5vw,43px);margin-top:16px;letter-spacing:-.026em;text-wrap:balance}
-h3{font-size:clamp(19px,2vw,23px);letter-spacing:-.02em}
+h2{font-size:clamp(30px,4vw,50px);margin-top:16px;letter-spacing:-.008em;text-wrap:balance}
+h3{font-size:clamp(21px,2.2vw,26px);letter-spacing:-.005em}
 .lead{margin-top:16px;font-size:clamp(16px,1.4vw,18.5px);color:var(--ink-2);max-width:62ch}
 .muted{color:var(--ink-2)}
 .hr{height:1px;background:var(--line);border:0;margin:0}
@@ -223,7 +236,7 @@ h3{font-size:clamp(19px,2vw,23px);letter-spacing:-.02em}
 .facts li{display:flex;gap:24px;padding:16px 0;border-bottom:1px solid var(--line);align-items:baseline}
 .sec-dark .facts,.sec-dark .facts li{border-color:rgba(255,255,255,.18)}
 .facts .lab{font-family:var(--m);font-size:11.5px;letter-spacing:.12em;color:var(--accent);flex:0 0 92px;text-transform:uppercase}
-.sec-dark .facts .lab{color:#ffb3bd}
+.sec-dark .facts .lab{color:#e2555f}
 .facts .val{font-size:16px;color:var(--ink-2)}
 .sec-dark .facts .val{color:rgba(255,255,255,.86)}
 @media (max-width:900px){.hidden-layer{grid-template-columns:1fr}}
@@ -245,8 +258,8 @@ h3{font-size:clamp(19px,2vw,23px);letter-spacing:-.02em}
 .partner{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(26px,4vw,60px);align-items:center}
 .partner figure img{width:100%;height:100%;object-fit:cover}
 .partner>div>figure{aspect-ratio:4/3}
-.partner-logo{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:26px 30px;display:inline-flex;align-items:center;justify-content:center}
-.partner-logo img{height:44px;width:auto}
+.partner-logo{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px 40px;display:inline-flex;align-items:center;justify-content:center}
+.partner-logo img{height:62px;width:auto}
 .checks{margin:24px 0 0;padding:0;list-style:none;display:grid;gap:13px}
 .checks li{display:flex;gap:13px;align-items:flex-start;font-size:16.6px}
 .checks li::before{content:"";flex:0 0 auto;width:18px;height:18px;margin-top:4px;border-radius:50%;
@@ -274,9 +287,10 @@ h3{font-size:clamp(19px,2vw,23px);letter-spacing:-.02em}
   mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
 .marks-track{display:flex;align-items:center;gap:clamp(52px,7vw,120px);width:max-content;
   animation:przesuw-marek 38s linear infinite}
-.marks-track span{font-family:var(--h);font-weight:700;font-size:clamp(22px,2.7vw,36px);
-  letter-spacing:-.025em;color:#7c868c;white-space:nowrap;transition:color .3s}
-.marks-track span:hover{color:var(--ink)}
+.marks-track img{width:auto;flex:0 0 auto;
+  /* jeden ton zamiast czterech różnych kolorów firmowych; barwa wraca pod kursorem */
+  filter:grayscale(1) opacity(.62);transition:filter .35s}
+.marks-track img:hover{filter:grayscale(0) opacity(1)}
 .marks:hover .marks-track{animation-play-state:paused}
 @keyframes przesuw-marek{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){
@@ -329,6 +343,11 @@ h3{font-size:clamp(19px,2vw,23px);letter-spacing:-.02em}
 .towns .plus{background:var(--accent);border-color:var(--accent);color:#fff}
 .sec-dark .towns .plus{background:var(--accent);border-color:var(--accent)}
 @media (max-width:900px){.area{grid-template-columns:1fr}}
+
+/* ——— mapa obszaru ——— */
+.mapa{margin:clamp(34px,4.5vw,56px) 0 0;padding:0}
+.mapa img{width:100%;height:auto;border-radius:var(--r);border:1px solid var(--line);background:#f4f1ec}
+.mapa figcaption{margin-top:14px;font-size:14.5px;color:var(--ink-3);max-width:70ch}
 
 /* ——— faq ——— */
 .faq{margin-top:40px;border-top:1px solid var(--line)}
