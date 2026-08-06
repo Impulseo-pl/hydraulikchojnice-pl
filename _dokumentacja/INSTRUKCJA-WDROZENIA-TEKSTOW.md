@@ -44,8 +44,10 @@ Dwadzieścia lat pracy przy instalacjach, od domu w budowie po remont łazienki.
 **NOWE**
 ```
 Dwadzieścia lat przy instalacjach, w Chojnicach i okolicy.
-      Robimy całość: rozprowadzenie, montaż urządzeń, rozruch i regulację.
+      Od domu w budowie po remont łazienki, za cenę, którą znacie przed startem.
 ```
+> Krócej niż oryginał, ale zostają oba argumenty: rozpoznanie sytuacji klienta
+> („dom w budowie / remont łazienki") i cena znana z góry.
 
 ## 1.2 Sekcja: pasek pięciu haseł pod pierwszym ekranem
 
@@ -56,16 +58,18 @@ Zmienia się trzecia pozycja i kolejność wszystkich pięciu.
 20 lat / Bezpłatna wycena / Cena ostateczna / 100 km / Vaillant
 ```
 
-**NOWE** (kolejność i treść)
+**NOWE** (zmienia się wyłącznie kolejność, treść bez zmian)
 ```
-20 lat                  — przy instalacjach w domach
+20 lat                  — doświadczenia w instalacjach
 Vaillant                — autoryzowany montaż i serwis
-Próby szczelności       — protokoły przy odbiorze
+Cena ostateczna         — ustalona przed startem prac
 100 km                  — zasięg dojazdu od Chojnic
 Bezpłatna wycena        — przyjazd i pomiar na miejscu
 ```
-
-Pozycja „Cena ostateczna — ustalona przed startem prac" znika w całości.
+> „Cena ostateczna" ZOSTAJE. Odpowiada na lęk numer jeden przy wyborze fachowca —
+> że cena urośnie w trakcie. Powtórzenie z krokiem drugim procesu nie szkodzi:
+> pasek się skanuje wzrokiem, proces czyta. Zmienia się tylko kolejność, żeby
+> Vaillant stał wysoko, a bezpłatna wycena (dublująca przycisk obok) na końcu.
 
 ## 1.3 Sekcja: usługi, nadpis nad nagłówkiem
 
@@ -90,8 +94,11 @@ Instalacje C.O, <span class="nw">wodno-kanalizacyjne</span>, gazowe i ogrzewania
 
 **NOWE**
 ```
-Cztery zakresy, w których pracujemy przez większość roku. Resztę znajdziecie w ofercie.
+Instalacje C.O, <span class="nw">wodno-kanalizacyjne</span>, gazowe i ogrzewania podłogowego to dla nas codzienność.
 ```
+> ⚠️ Pierwsze zdanie to DOSŁOWNY tekst klienta z maila — zostaje bez zmian.
+> Usuwamy wyłącznie drugie zdanie („fachowego doradztwa… jesteście w dobrym miejscu"),
+> które nie pochodzi od niego.
 
 ## 1.5 Sekcja: proces, zdanie wprowadzające
 
@@ -131,9 +138,12 @@ Montujemy i serwisujemy kotły gazowe oraz pompy ciepła Vaillant. Prowadzimy te
 
 **NOWE**
 ```
-Montujemy i serwisujemy kotły gazowe oraz pompy ciepła Vaillant. Sprzęt, gwarancja
-          i przeglądy zostają w jednych rękach, bo urządzenie montuje ktoś przeszkolony przez producenta.
+Montujemy i serwisujemy kotły gazowe oraz pompy ciepła Vaillant, prowadzimy też ich
+          sprzedaż. Gwarancja producenta zostaje utrzymana, bo montuje ktoś przez niego przeszkolony.
 ```
+> Informacja o sprzedaży sprzętu wraca — to osobna usługa i realny powód do telefonu.
+> Świadomie NIE używamy tu zwrotu „w jednych rękach", bo ten jest nagłówkiem
+> podstrony Partner (4.1) i powtórzony w dwóch miejscach traci siłę.
 
 ## 1.8 Sekcja: realizacje, akapit wprowadzający
 
@@ -158,9 +168,12 @@ Pracujemy w Chojnicach i okolicy, a przy większych inwestycjach dojeżdżamy w 
 
 **NOWE**
 ```
-Pracujemy w Chojnicach i okolicy, dojeżdżamy w promieniu 100 km.
+Pracujemy w Chojnicach i okolicy, przy większych zleceniach dojeżdżamy do 100 km.
           Nie wiecie, czy dojedziemy do was? Wystarczy jeden telefon.
 ```
+> Warunek ZOSTAJE. Jego usunięcie tworzyłoby zobowiązanie do dojazdu 100 km
+> na każdą robotę, także wymianę baterii — a klient odesłany przez telefon
+> („to za daleko") poczuje się oszukany stroną. Wątpliwość rozstrzyga zdanie obok.
 
 ## 1.10 Sekcja: wezwanie na dole strony
 
@@ -186,30 +199,27 @@ Przyjedziemy, obejrzymy zakres i podamy cenę. Przyjazd i wycena nic nie kosztuj
 
 # 2. OFERTA (`oferta.html`)
 
-## 2.1 Kolejność dwunastu pozycji — WYMAGA ZGODY KLIENTA
+## 2.1 Awarie — pasek zamiast zmiany kolejności · WYMAGA DECYZJI KLIENTA
 
-Pozycja „Drobne bądź duże awarie" przechodzi z **dwunastego** miejsca na **pierwsze**.
-Reszta przesuwa się o jedno w dół, kolejność między nimi bez zmian.
+**Kolejność dwunastu pozycji ZOSTAJE taka, jaką podał klient.**
 
-W `pages.py` dotyczy to listy `USLUGI_12` oraz słownika `OFERTA_OPISY`.
+Wcześniej rozważaliśmy przeniesienie awarii z dwunastego miejsca na pierwsze, bo to jedyna
+pozycja generująca natychmiastowy telefon. Wycofane z powodu, który przeważa: awaria to dwie
+godziny pracy, instalacja w domu to kilkanaście tysięcy złotych. Wystawienie awarii na pierwszym
+miejscu przesuwa pozycjonowanie firmy z „robimy instalacje" na „przyjeżdżamy do przecieków"
+i może zmienić strukturę zleceń na gorszą, mimo większej liczby telefonów.
 
-**NOWA kolejność:**
+**Zamiast tego:** wąski pasek z numerem, widoczny bez przewijania.
+
+**NOWE** (element do dodania na stronie głównej, nad stopką albo pod paskiem haseł)
 ```
-01 Drobne bądź duże awarie
-02 Instalacje wodno-kanalizacyjne
-03 Instalacje C.O
-04 Instalacje ogrzewania podłogowego
-05 Montaż kotłów gazowych
-06 Montaż kotłów na pellet oraz stałopalnych
-07 Montaż pomp ciepła
-08 Montaż instalacji gazowych
-09 Montaż przydomowych oczyszczalni ścieków
-10 Montaż odkurzaczy centralnych
-11 Białe montaże
-12 Przeróbki łazienek
+Awaria? Dzwońcie: +48 883 602 422
 ```
 
-Uwaga: ta sama lista w tej samej kolejności występuje też na stronie głównej (sekcja „Oferta").
+Awaryjny klient trafia od razu, a struktura oferty zostaje nietknięta.
+
+⚠️ **Najpierw zapytać klienta, czy w ogóle chce więcej zleceń awaryjnych.** Jeśli nie —
+pomijamy cały punkt.
 
 ## 2.2 Sekcja: zdanie pod nagłówkiem
 
@@ -220,8 +230,11 @@ Zakres usług, które wykonujemy, znajdziecie poniżej. Wycena jest bezpłatna, 
 
 **NOWE**
 ```
-Przy każdej pozycji jest krótko napisane, co dokładnie robimy.
+(usunąć oba zdania, bez zamiennika)
 ```
+> Pierwotnie proponowaliśmy tu zdanie „Przy każdej pozycji jest krótko napisane,
+> co dokładnie robimy" — wycofane, bo to znów instrukcja obsługi strony, czyli
+> dokładnie ten sam błąd, co w usuwanym zdaniu. Lista z opisami nie wymaga zapowiedzi.
 
 ## 2.3 Opis usługi: Montaż kotłów gazowych
 
@@ -308,7 +321,7 @@ Kilka kadrów z etapu, którego zwykle nikt nie ogląda, bo zaraz potem znika po
 ```
 **NOWE**
 ```
-Kilka kadrów z trakcie roboty, zanim wszystko zniknie pod tynkiem.
+Kilka kadrów w trakcie roboty, zanim wszystko zniknie pod tynkiem.
 ```
 
 ## 2.11 Sekcja: wezwanie na dole
@@ -379,10 +392,16 @@ nie da się rozpoznać na kadrach ze stanu surowego i których nikt nie potwierd
 | 23 | Ogrzewanie podłogowe w pokoju gościnnym | Ogrzewanie podłogowe w pomieszczeniu na piętrze |
 | 24 | Podłogówka w pomieszczeniu przy kotłowni | Podłogówka rozłożona przy ścianie działowej |
 
-## 3.3 Liczba zdjęć w grupie „Rozdzielacze i ogrzewanie podłogowe" — WYMAGA ZGODY KLIENTA
+## 3.3 Kolejność zdjęć w galerii — bez usuwania
 
-Grupa liczy 26 kadrów, w większości bardzo do siebie podobnych. Propozycja: zostawić 12 najlepszych.
-Plik `photos.py`, funkcja `gallery_groups()`.
+**Wszystkie 45 zdjęć ZOSTAJE.** Klient prosił, żeby wszystkie niepodpisane kadry trafiły
+do realizacji, a sama ich liczba jest argumentem: pokazuje, że robili to wielokrotnie.
+
+Problemem nie jest liczba, tylko układ — dziś dwadzieścia sześć podłogówek leci ciurkiem
+i po siódmym kadrze przestaje się na nie patrzeć.
+
+**ZMIANA:** w pliku `photos.py`, funkcja `gallery_groups()` — przeplatać kadry podłogówki
+rozdzielaczami i kotłowniami zamiast układać je blokiem. Liczniki przy grupach zostają.
 
 ## 3.4 Sekcja: wezwanie na dole
 
@@ -416,8 +435,11 @@ Autoryzowany montaż i serwis Vaillant
 ```
 **NOWE**
 ```
-Sprzęt, gwarancja i przeglądy w jednych rękach
+Vaillant: sprzęt, gwarancja i przeglądy w jednych rękach
 ```
+> Korzyść zostaje, ale marka wraca do nagłówka. „Vaillant" to fraza, na którą ktoś
+> realnie trafia z wyszukiwarki („serwis Vaillant Chojnice") i jedyny rozpoznawalny
+> znak na tej podstronie.
 
 ## 4.2 Sekcja: zdanie pod nagłówkiem
 
@@ -430,21 +452,32 @@ Pracujemy na urządzeniach Vaillant i mamy autoryzację producenta na ich monta�
 Mamy autoryzację Vaillanta na montaż i serwis. To znaczy, że kocioł montuje ktoś przeszkolony przez producenta, a wy nie szukacie osobno serwisu, gdy przyjdzie przegląd.
 ```
 
-## 4.3 Sekcja: pierwsza lista trzech punktów — usunąć w całości
+## 4.3 Sekcja: dwie listy mówiące to samo
 
-**STARE**
+**Lista trzech punktów ZOSTAJE bez zmian:**
 ```
 Montaż oraz serwis kotłów gazowych Vaillant
 Montaż pomp ciepła Vaillant
 Sprzedaż obu typów urządzeń
 ```
+> ⚠️ To DOSŁOWNE życzenie klienta z maila: „proszę o podpunkty w takiej formie".
+> Wcześniej proponowaliśmy usunięcie tej listy — WYCOFANE.
+
+**Zamiast tego usuwamy drugą listę** (Montaż / Serwis / Sprzedaż z opisami), bo to ona
+powtarza treść punktów klienta:
+
+**STARE** (do usunięcia)
+```
+Montaż — Kotły gazowe i pompy ciepła, z rozruchem i konfiguracją
+Serwis — Przeglądy okresowe i naprawy urządzeń Vaillant
+Sprzedaż — Dobór i dostawa urządzeń do konkretnego domu
+```
 **NOWE**
 ```
-(usunąć całą listę — druga lista niżej mówi to samo, tylko konkretniej)
+(usunąć całą listę)
 ```
-
-Uwaga: ta sama lista trzech punktów występuje także na **stronie głównej**, w sekcji Vaillanta.
-Tam zostaje bez zmian.
+> Treść, której nie ma w punktach klienta — rozruch, konfiguracja, przeglądy okresowe —
+> przenosimy do akapitu obok (punkt 4.4), żeby nic nie zginęło.
 
 ## 4.4 Sekcja: akapit prawej kolumny
 
@@ -456,24 +489,15 @@ Autoryzacja oznacza, że urządzenie montuje ktoś przeszkolony przez producenta
 ```
 **NOWE**
 ```
-Producent uzależnia gwarancję od tego, kto montuje urządzenie. Dlatego montaż
-          i pierwsze uruchomienie robi u nas osoba z autoryzacją, a przeglądy w kolejnych latach zostają
-          po naszej stronie.
+Producent uzależnia gwarancję od tego, kto montuje urządzenie. Dlatego montaż,
+          pierwsze uruchomienie i konfigurację robi u nas osoba z autoryzacją, a przeglądy okresowe
+          i naprawy w kolejnych latach zostają po naszej stronie.
           Sprzęt kupujecie u nas albo we własnym zakresie — montaż i rozruch wygląda tak samo.
 ```
+> Akapit przejmuje treść z usuniętej listy (punkt 4.3): konfigurację, przeglądy okresowe
+> i naprawy. Nic nie ginie.
 
-## 4.5 Sekcja: trzy pozycje Montaż / Serwis / Sprzedaż
-
-**STARE** (trzecia pozycja)
-```
-Dobór i dostawa urządzeń do konkretnego domu
-```
-**NOWE**
-```
-Dobór i dostawa urządzeń pod konkretny dom
-```
-
-Pozostałe dwie bez zmian.
+## 4.5 (punkt nieaktualny — lista usunięta w 4.3)
 
 ## 4.6 Sekcja: urządzenia, nadpis
 
@@ -549,8 +573,12 @@ Instalacje C.O, wodno-kanalizacyjne, gazowe i ogrzewania podłogowego to dla nas
 ```
 **NOWE**
 ```
-(usunąć cały akapit — powtarza tekst ze strony głównej)
+(usunąć cały akapit)
 ```
+> ⚠️ ROZSTRZYGNIĘCIE SPRZECZNOŚCI. Zdanie klienta „to dla nas codzienność" stoi w dwóch
+> miejscach: tutaj i na stronie głównej (punkt 1.4). Zostaje **na stronie głównej** — ma
+> większy ruch i wprowadza tam sekcję usług. Tutaj usuwamy je w całości, bo pod spodem
+> stoi mocniejszy akapit o dwóch ludziach, który mówi coś, czego nie ma nigdzie indziej.
 
 ## 5.3 Sekcja: drugi akapit
 
