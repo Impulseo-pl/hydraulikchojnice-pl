@@ -137,7 +137,9 @@ body.hero-page .top.is-stuck .brand .logo-dark{display:block}
 }
 
 /* ——— hero ——— */
-.hero{position:relative;min-height:min(94svh,860px);display:flex;align-items:center;overflow:hidden;background:var(--navy-2)}
+.hero{position:relative;min-height:min(94svh,860px);display:flex;align-items:center;overflow:hidden;background:var(--navy-2);
+  isolation:isolate}          /* zamyka warstwy hero w sobie — zdjecie nie ma jak wyjsc nad tekst ani nad menu */
+.hero-media{z-index:0}
 .hero-media{position:absolute;inset:0}
 .hero-media figure{position:absolute;inset:0;margin:0;opacity:0;transition:opacity 1.5s ease}
 .hero-media figure.is-on{opacity:1}
@@ -195,7 +197,7 @@ section{position:relative}
 .sec-dark .head .kicker{color:rgba(255,255,255,.78)}
 h2{font-size:clamp(30px,4vw,50px);margin-top:16px;letter-spacing:-.008em;text-wrap:balance}
 h3{font-size:clamp(21px,2.2vw,26px);letter-spacing:-.005em}
-.lead{margin-top:16px;font-size:clamp(16px,1.4vw,18.5px);color:var(--ink-2);max-width:min(100%,56ch)}
+.lead{margin-top:16px;font-size:clamp(16px,1.4vw,18.5px);color:var(--ink-2);max-width:min(100%,52ch)}
 .muted{color:var(--ink-2)}
 .hr{height:1px;background:var(--line);border:0;margin:0}
 

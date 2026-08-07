@@ -519,7 +519,7 @@ def realizacje_body():
         # pierwszy kafel pierwszej grupy stoi na pierwszym ekranie — ładujemy go od razu
         # w układzie kafelkowym najwiekszy kadr pierwszego ekranu NIE musi byc
         # pierwszy w kodzie — ladujemy od razu caly pierwszy rzad
-        kafle = "\n".join("      " + zoom_fig(b, lazy=not (nr == 0 and i < 3))
+        kafle = "\n".join("      " + zoom_fig(b, lazy=not (nr == 0 and i < 5))
                           for i, b in enumerate(lista))
         sekcje.append(f"""    <div class="group-head rv">
       <h3>{chron(tytul)}</h3>
