@@ -122,7 +122,7 @@ body.hero-page .brand .logo-light{display:block}
 body.hero-page .brand .logo-dark{display:none}
 .brand .logo-light{display:none}
 body.hero-page .top.is-stuck{background:rgba(251,250,248,.94);backdrop-filter:saturate(1.4) blur(10px);border-bottom-color:var(--line-soft)}
-body.hero-page .top.is-stuck .nav a{color:var(--ink-2)}
+body.hero-page .top.is-stuck .nav a{color:var(--ink-2);text-shadow:none}
 body.hero-page .top.is-stuck .nav a:hover,body.hero-page .top.is-stuck .nav a[aria-current="page"]{color:var(--ink)}
 body.hero-page .top.is-stuck .burger{border-color:var(--line)}
 body.hero-page .top.is-stuck .burger span{background:var(--ink)}
@@ -130,7 +130,7 @@ body.hero-page .top.is-stuck .brand .logo-light{display:none}
 body.hero-page .top.is-stuck .brand .logo-dark{display:block}
 @media (max-width:900px){
   /* rozwinięte menu ma jasne tło, więc linki muszą wrócić do ciemnego koloru */
-  body.hero-page .top .nav.is-open a{color:var(--ink-2)}
+  body.hero-page .top .nav.is-open a{color:var(--ink-2);text-shadow:none}
   body.hero-page .top .nav.is-open a:hover,
   body.hero-page .top .nav.is-open a[aria-current="page"]{color:var(--ink)}
   body.hero-page .top .nav.is-open .tel-btn{color:#fff!important}
@@ -348,19 +348,17 @@ h3{font-size:clamp(21px,2.2vw,26px);letter-spacing:-.005em}
 .mapa{margin:clamp(34px,4.5vw,56px) 0 0;padding:0}
 .mapa img{width:100%;height:auto;border-radius:var(--r);border:1px solid var(--line);background:#f4f1ec}
 .mapa iframe{width:100%;height:clamp(320px,46vw,520px);border-radius:var(--r);border:1px solid var(--line);display:block}
-/* Mapa ładuje się dopiero po kliknięciu (decyzja K. 07.08.2026): dopóki klient nie
-   kliknie, strona nie łączy się z Google — więc baner cookies jest niepotrzebny,
-   a mapa i tak jest prawdziwa. Zasłona ma wyglądać jak część strony, nie jak błąd. */
-.mapa-zaslona{width:100%;height:clamp(320px,46vw,520px);border-radius:var(--r);border:1px solid var(--line);
-  background:linear-gradient(160deg,var(--paper-2),#e7e2d9);display:flex;flex-direction:column;
-  align-items:center;justify-content:center;gap:14px;text-align:center;padding:28px}
-.mapa-zaslona strong{font-family:var(--h);font-size:clamp(20px,2.4vw,26px);font-weight:600;color:var(--ink)}
-.mapa-pin{width:16px;height:16px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);
-  background:var(--accent);box-shadow:0 6px 16px -8px rgba(142,36,52,.9)}
-.mapa-btn{font-family:var(--b);font-size:15.5px;color:#fff;background:var(--accent);border:0;
-  border-radius:var(--r);padding:13px 22px;cursor:pointer;transition:background .2s,transform .2s}
-.mapa-btn:hover{background:var(--accent-dark);transform:translateY(-1px)}
-.mapa-nota{font-size:13.5px;color:var(--ink-2);max-width:34ch}
+/* Mapa = statyczny obrazek z OpenStreetMap + link do Google Maps (tak jak u KMK Dachy).
+   Widać ją od razu, nic nie łączy się z Google przy wejściu, więc baner cookies zbędny. */
+.mapa-link{display:block;position:relative;border-radius:var(--r);overflow:hidden;
+  border:1px solid var(--line);line-height:0}
+.mapa-link img{width:100%;height:auto;display:block;transition:transform .55s var(--ease,cubic-bezier(.2,.7,.3,1)),filter .55s}
+.mapa-otworz{position:absolute;right:14px;bottom:14px;background:rgba(251,250,248,.94);
+  color:var(--ink);font-family:var(--b);font-size:14px;line-height:1;padding:11px 16px;
+  border-radius:var(--r);box-shadow:0 2px 10px -4px rgba(10,20,30,.45)}
+@media (hover:hover){
+  .mapa-link:hover img{transform:scale(1.02);filter:brightness(1.03)}
+}
 .mapa figcaption{margin-top:14px;font-size:14.5px;color:var(--ink-3);max-width:70ch}
 
 /* ——— faq ——— */

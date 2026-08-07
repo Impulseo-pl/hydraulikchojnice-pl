@@ -408,14 +408,14 @@ def index_body():
     </div>
 
     <figure class="mapa rv">
-      <div class="mapa-zaslona" data-mapa
-           data-mapa-src="https://maps.google.com/maps?q=Chojnice&amp;z=9&amp;output=embed&amp;hl=pl"
-           data-mapa-tytul="Mapa: Chojnice i okolice">
-        <span class="mapa-pin" aria-hidden="true"></span>
-        <strong>Chojnice i okolica</strong>
-        <button type="button" class="mapa-btn">Pokaż mapę Google</button>
-        <span class="mapa-nota">Mapa łączy się z Google dopiero po kliknięciu.</span>
-      </div>
+      <a class="mapa-link" href="https://www.google.com/maps/search/hydraulik+Chojnice/@53.6958,17.5578,10z"
+         target="_blank" rel="noopener noreferrer">
+        <img src="img/mapa-chojnice.webp"
+             srcset="img/mapa-chojnice-720.webp 720w, img/mapa-chojnice.webp 1440w"
+             sizes="(max-width:900px) 100vw, 1200px" width="1440" height="620"
+             alt="Mapa: Chojnice i okolica, zasięg dojazdu 100 km" loading="lazy" decoding="async">
+        <span class="mapa-otworz">Otwórz w Google Maps</span>
+      </a>
       <figcaption>Chojnice i okolica. Przy większych zleceniach dojeżdżamy w promieniu 100 km.</figcaption>
     </figure>
   </div>
