@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Treść poszczególnych stron serwisu."""
-from photos import img, img_special, img_pas, zoom_fig, gallery_groups, opis
+from photos import img, img_special, img_pas, zoom_fig, gallery_groups, opis, srcset_z_plikow
 
 TEL = "+48 883 602 422"
 TEL_E164 = "+48883602422"
@@ -546,10 +546,13 @@ def partner_body():
         (1, "kotły stojące z zasobnikiem Vaillant"), (2, "pompa ciepła Vaillant"),
         (4, "kocioł wiszący Vaillant"), (5, "kocioł kondensacyjny Vaillant"),
     ]
+    # ⚠️ srcset składany przez `srcset_z_plikow` — ręcznie wpisane „900w, 1600w" kłamały:
+    # skalowanie liczy współczynnik od dłuższego boku, więc kadr pionowy vaillant-05
+    # ma realnie 703/1171 px, a nie 900/1600 (lekcja 2026-08-06-005).
     urzadzenia = "\n".join(
         f'      <figure data-zoom="img/vaillant-{i:02d}-1600.webp" data-alt="Urządzenie Vaillant, {t}" '
         f'data-cap="{t}" tabindex="0">'
-        f'<img src="img/vaillant-{i:02d}-900.webp" srcset="img/vaillant-{i:02d}-900.webp 900w, img/vaillant-{i:02d}-1600.webp 1600w" '
+        f'<img src="img/vaillant-{i:02d}-900.webp" srcset="{srcset_z_plikow(f"vaillant-{i:02d}")}" '
         f'width="900" height="700" alt="Urządzenie Vaillant, {t}" loading="lazy" decoding="async"></figure>'
         for i, t in URZADZENIA)
 

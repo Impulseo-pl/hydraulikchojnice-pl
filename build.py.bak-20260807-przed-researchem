@@ -2,11 +2,6 @@
 """Składa strony serwisu z części wspólnych. Treść stron siedzi w pages.py."""
 import json, os, re, sys
 
-# twarda spacja po jednoliterowym spójniku — jedno źródło dla wszystkich stron
-# (kopia z ~/.claude/skills/strona-docelowa/rdzen/; poprawki idą DO ŹRÓDŁA)
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from typografia import twarde_spacje
-
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE = "https://hydraulikchojnice.pl"
 FIRMA = "Usługi Hydrauliczne Ireneusz Stryszyk"
@@ -152,7 +147,6 @@ def build():
     for p in pages.PAGES:
         html = head(p) + p["body"] + foot(p)
         html = html.replace("{menu_links(p['file'])}", menu_links(p["file"]))
-        html = twarde_spacje(html)
         with open(os.path.join(ROOT, p["file"]), "w", encoding="utf-8") as f:
             f.write(html)
         print("zapisano", p["file"], len(html) // 1024, "KB")

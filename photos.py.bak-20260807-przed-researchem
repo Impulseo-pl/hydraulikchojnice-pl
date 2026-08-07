@@ -68,68 +68,13 @@ def opis(base):
     return OPIS.get(base, "Instalacja wykonana przez Usługi Hydrauliczne Ireneusz Stryszyk")
 
 
-# ── deskryptor `w` MUSI wynikać z PLIKU, nie ze stałej docelowej ─────────────
-# Lekcja 2026-08-06-005. Skalowanie liczy współczynnik od DŁUŻSZEGO boku, więc kadr
-# pionowy zapisany jako „-1600.webp" ma realnie 1200 px szerokości, a deskryptor mówił
-# 1600w. Przeglądarka wybiera kandydata WYŁĄCZNIE po deskryptorze — na Retinie liczyła,
-# że ma 1600 px, dostawała 1200, i zdjęcie wyglądało miękko. Zmierzone przed poprawką:
-# 45 kłamliwych deskryptorów w 36 plikach na tej oddanej, opłaconej stronie.
-_ROZMIARY = {}
-# kolejność bez znaczenia — i tak sortujemy po realnej szerokości
-_WARIANTY = (900, 1400, 1600, 2048, 2400)
-
-
-def _realne(sciezka):
-    """Szerokość i wysokość PLIKU (z dysku), z pamięcią podręczną."""
-    p = sciezka if os.path.isabs(sciezka) else os.path.join(ROOT, sciezka)
-    if p not in _ROZMIARY:
-        from PIL import Image
-        with Image.open(p) as im:
-            _ROZMIARY[p] = im.size
-    return _ROZMIARY[p]
-
-
-def _kandydaci(base):
-    """Lista (ścieżka, szerokość, wysokość) dla wszystkich istniejących wariantów,
-    posortowana rosnąco po REALNEJ szerokości."""
-    out = []
-    for w in _WARIANTY:
-        rel = f"img/{base}-{w}.webp"
-        if os.path.exists(os.path.join(ROOT, rel)):
-            try:
-                sz, ws = _realne(rel)
-            except Exception:
-                continue
-            out.append((rel, sz, ws))
-    out.sort(key=lambda x: x[1])
-    return out
-
-
-def _srcset(kandydaci):
-    return ", ".join(f"{p} {w}w" for p, w, _ in kandydaci)
-
-
-def srcset_z_plikow(base, maks=1600):
-    """Gotowy atrybut srcset dla zdjęć wstawianych ręcznie w pages.py (Vaillant, certyfikaty).
-    Deskryptory czytane z dysku — te wpisywane z ręki rozjeżdżały się o 6–27%."""
-    kand = [k for k in _kandydaci(base) if k[1] <= maks] or _kandydaci(base)[:1]
-    return _srcset(kand)
-
-
 def dims(base, w=900):
-    """Wymiary wariantu o podanej nazwie — czytane z pliku, z manifestu tylko awaryjnie."""
-    rel = f"img/{base}-{w}.webp"
-    if os.path.exists(os.path.join(ROOT, rel)):
-        try:
-            return _realne(rel)
-        except Exception:
-            pass
     m = MANIFEST.get(base)
     if not m:
         return (900, 900)
     if w == 900:
         return (m["w"], m["h"])
-    k = w / max(m["w"], m["h"])
+    k = 1600 / max(m["w"], m["h"])
     return (round(m["w"] * k), round(m["h"] * k))
 
 
@@ -142,49 +87,20 @@ SPECJALNE = {
 
 def img_special(key, lazy=True, cls="", sizes=None):
     s900, sbig, w, h, alt = SPECJALNE[key]
-    kand = []
-    for rel in (s900, sbig):
-        if os.path.exists(os.path.join(ROOT, rel)):
-            try:
-                sz_, ws_ = _realne(rel)
-            except Exception:
-                continue
-            kand.append((rel, sz_, ws_))
-    kand.sort(key=lambda x: x[1])
-    if kand:
-        w, h = kand[0][1], kand[0][2]
-        srcset = _srcset(kand)
-        src = kand[0][0]
-    else:
-        srcset, src = f"{s900} 900w, {sbig} 1400w", s900
     load = ' loading="lazy" decoding="async"' if lazy else ' fetchpriority="high" decoding="async"'
     sz = f' sizes="{sizes}"' if sizes else ""
     c = f' class="{cls}"' if cls else ""
-    return (f'<img{c} src="{src}" srcset="{srcset}"{sz}'
+    return (f'<img{c} src="{s900}" srcset="{s900} 900w, {sbig} 1400w"{sz}'
             f' width="{w}" height="{h}" alt="{alt}"{load}>')
 
 
 def img(base, w=900, cls="", lazy=True, sizes=None):
-    """Zdjęcie z srcset zbudowanym z REALNYCH szerokości plików.
-
-    ⚠️ Warianty POWYŻEJ 1600 px dokładamy WYŁĄCZNIE, gdy podano `sizes`. Bez `sizes`
-    przeglądarka zakłada slot na całą szerokość okna i na Retinie bierze największy
-    dostępny plik — czyli kafel galerii 404 px ściągałby zdjęcie 2048 px. Deskryptory
-    naprawiamy zawsze, ale nie dokładamy przy okazji ciężaru tam, gdzie nikt nie prosił.
-    """
-    kand = _kandydaci(base)
-    if not sizes:
-        kand = [k for k in kand if k[1] <= 1600] or kand[:1]
-    if not kand:                                  # awaryjnie: stara ścieżka
-        ww, hh = dims(base, w)
-        src, srcset = f"img/{base}-900.webp", f"img/{base}-900.webp {ww}w"
-    else:
-        src, ww, hh = kand[0]
-        srcset = _srcset(kand)
+    """Zdjęcie z srcset (900/1600) i wymiarami."""
+    ww, hh = dims(base, w)
     load = ' loading="lazy" decoding="async"' if lazy else ' fetchpriority="high" decoding="async"'
     sz = f' sizes="{sizes}"' if sizes else ""
     c = f' class="{cls}"' if cls else ""
-    return (f'<img{c} src="{src}" srcset="{srcset}"{sz}'
+    return (f'<img{c} src="img/{base}-900.webp" srcset="img/{base}-900.webp 900w, img/{base}-1600.webp 1600w"{sz}'
             f' width="{ww}" height="{hh}" alt="{opis(base)}"{load}>')
 
 
@@ -203,25 +119,10 @@ def img_pas(base):
     }
     if base not in duzy:
         return img(base, lazy=False, sizes="100vw")
-    src2, _w2, src1, _w1, alt = duzy[base]
+    src2, w2, src1, w1, alt = duzy[base]
     tekst = alt or opis(base)
-    # deskryptory z PLIKÓW — te wpisane ręcznie (2048/1600) rozjeżdżały się z realnymi
-    kand = []
-    for rel in (src1, src2):
-        if os.path.exists(os.path.join(ROOT, rel)):
-            try:
-                sz_, ws_ = _realne(rel)
-            except Exception:
-                continue
-            kand.append((rel, sz_, ws_))
-    kand.sort(key=lambda x: x[1])
-    if not kand:
-        return img(base, lazy=False, sizes="100vw")
-    # width/height ZOSTAJĄ w proporcji pasa (0.38) — to rezerwacja miejsca pod baner
-    # przycięty w CSS, nie proporcja pliku. Zmiana tego przesunęłaby układ.
-    return (f'<img src="{kand[0][0]}" srcset="{_srcset(kand)}" sizes="100vw" '
-            f'width="{_w2}" height="{int(_w2 * 0.38)}" alt="{tekst}" '
-            f'fetchpriority="high" decoding="async">')
+    return (f'<img src="{src1}" srcset="{src1} {w1}w, {src2} {w2}w" sizes="100vw" '
+            f'width="{w2}" height="{int(w2 * 0.38)}" alt="{tekst}" fetchpriority="high" decoding="async">')
 
 
 def zoom_fig(base, cls=""):
