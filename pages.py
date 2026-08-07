@@ -471,7 +471,7 @@ def oferta_body():
         wiersze.append(f"""      <div class="step" style="border-right:0;border-bottom:1px solid var(--line);padding:24px 0">
         <span class="n">{i:02d}</span>
         <h3 style="margin:10px 0 8px">{chron(u)}</h3>
-        <p style="max-width:78ch">{OFERTA_OPISY[u]}</p>
+        <p style="max-width:min(100%,54ch)">{OFERTA_OPISY[u]}</p>
       </div>""")
     lista = "\n".join(wiersze)
 
@@ -515,8 +515,12 @@ def oferta_body():
 
 def realizacje_body():
     sekcje = []
-    for tytul, lista in gallery_groups():
-        kafle = "\n".join("      " + zoom_fig(b) for b in lista)
+    for nr, (tytul, lista) in enumerate(gallery_groups()):
+        # pierwszy kafel pierwszej grupy stoi na pierwszym ekranie — ładujemy go od razu
+        # w układzie kafelkowym najwiekszy kadr pierwszego ekranu NIE musi byc
+        # pierwszy w kodzie — ladujemy od razu caly pierwszy rzad
+        kafle = "\n".join("      " + zoom_fig(b, lazy=not (nr == 0 and i < 3))
+                          for i, b in enumerate(lista))
         sekcje.append(f"""    <div class="group-head rv">
       <h3>{chron(tytul)}</h3>
       <span class="count">{len(lista)} zdjęć</span>

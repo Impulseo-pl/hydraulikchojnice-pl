@@ -224,12 +224,16 @@ def img_pas(base):
             f'fetchpriority="high" decoding="async">')
 
 
-def zoom_fig(base, cls=""):
-    """Kafel galerii otwierany w powiększeniu."""
+def zoom_fig(base, cls="", lazy=True):
+    """Kafel galerii otwierany w powiększeniu.
+
+    `lazy=False` dla PIERWSZEGO kafla na stronie: leniwe ładowanie największego obrazu
+    pierwszego ekranu opóźnia moment, w którym strona wygląda na gotową — przeglądarka
+    zaczyna go ściągać dopiero po przeliczeniu układu."""
     ww, hh = dims(base)
     c = f' class="{cls}"' if cls else ""
     return (f'<figure{c} data-zoom="img/{base}-1600.webp" data-alt="{opis(base)}" data-cap="{opis(base)}" tabindex="0">'
-            f'{img(base)}<figcaption>{opis(base)}</figcaption></figure>')
+            f'{img(base, lazy=lazy)}<figcaption>{opis(base)}</figcaption></figure>')
 
 
 def gallery_groups():
