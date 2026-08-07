@@ -237,7 +237,8 @@ h3{font-size:clamp(21px,2.2vw,26px);letter-spacing:-.005em}
 .hl-frames img{width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.2,.7,.3,1),filter .45s}
 .hl-frames figure:hover img{transform:scale(1.02);filter:brightness(1.05)}
 .hl-frames figcaption{position:absolute;left:0;right:0;bottom:0;padding:30px 13px 11px;font-family:var(--m);font-size:11px;letter-spacing:.08em;
-  color:#fff;background:linear-gradient(180deg,rgba(9,20,31,0),rgba(9,20,31,.72))}
+  color:#fff;background:linear-gradient(180deg,rgba(9,20,31,0),rgba(9,20,31,.86));
+  text-shadow:0 1px 3px rgba(8,14,20,.85)}
 .facts{margin:26px 0 0;padding:0;list-style:none;display:grid;gap:0;border-top:1px solid var(--line)}
 .facts li{display:flex;gap:24px;padding:16px 0;border-bottom:1px solid var(--line);align-items:baseline}
 .sec-dark .facts,.sec-dark .facts li{border-color:rgba(255,255,255,.18)}
@@ -310,7 +311,8 @@ h3{font-size:clamp(21px,2.2vw,26px);letter-spacing:-.005em}
 .mosaic img{width:100%;height:auto;display:block;transition:transform .55s cubic-bezier(.2,.7,.3,1),filter .45s}
 .mosaic figure:hover img{transform:scale(1.02);filter:brightness(1.05)}
 .mosaic figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 13px 11px;
-  background:linear-gradient(180deg,rgba(9,20,31,0),rgba(9,20,31,.78));color:#fff;
+  background:linear-gradient(180deg,rgba(9,20,31,0),rgba(9,20,31,.88));color:#fff;
+  text-shadow:0 1px 3px rgba(8,14,20,.85);
   font-family:var(--m);font-size:11px;letter-spacing:.06em;opacity:0;transition:opacity .3s}
 .mosaic figure:hover figcaption{opacity:1}
 @media (max-width:1000px){.mosaic{columns:2}}
